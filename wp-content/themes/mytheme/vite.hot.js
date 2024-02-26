@@ -8,7 +8,7 @@ function createHotFile() {
 
     // Skapa "hot"-filen i output-mappen
     const hotFilePath = path.join(buildPath, 'hot');
-    const port = 5173;
+    const port = 5174;
 
     // fs.writeFileSync(hotFilePath, 'http://[::1]:' + port);
     fs.writeFileSync(hotFilePath, 'http://localhost:' + port);

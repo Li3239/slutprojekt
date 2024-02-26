@@ -10,7 +10,7 @@ export default defineConfig(() => ({
     server:{
         protocol : "ws",
         host: "localhost",
-        port: 5173
+        port: 5174
     },
     build: {
         emptyOutDir: true,
