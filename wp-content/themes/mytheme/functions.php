@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 }
 
 require_once(get_template_directory() . "/init.php");
-
+//test
 /**
  * support Woocommerce function
  */
