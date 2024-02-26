@@ -1,176 +1,176 @@
-footer {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 555px;
-    min-height: 100px;
+// footer {
+//     display: flex;
+//     flex-direction: column;
+//     width: 100%;
+//     height: 555px;
+//     min-height: 100px;
 
-    .container-store-infomation {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        height: 300px;
-        margin: auto;
-        background-color: $tertiary-background-color;
+//     .container-store-infomation {
+//         display: flex;
+//         justify-content: space-between;
+//         width: 100%;
+//         height: 300px;
+//         margin: auto;
+//         background-color: $tertiary-background-color;
 
-        .information-column {
-            padding: 60px 0 60px 0;
-                margin-left: 100px;
+//         .information-column {
+//             padding: 60px 0 60px 0;
+//                 margin-left: 100px;
 
-            h1 {
-                @include infomation-title-commonStyles();
-            }
+//             h1 {
+//                 @include infomation-title-commonStyles();
+//             }
 
-            span {
-                @include neutral-font-commonStyles();
-                color: $secondary-font-color;
-            }
-        }
-    }
+//             span {
+//                 @include neutral-font-commonStyles();
+//                 color: $secondary-font-color;
+//             }
+//         }
+//     }
 
-    .container {
-        display: flex;
-        justify-content: space-between;
-        height: 312px;
-        width: 100%;
-        margin: auto;
-        margin-top: 50px;
+//     .container {
+//         display: flex;
+//         justify-content: space-between;
+//         height: 312px;
+//         width: 100%;
+//         margin: auto;
+//         margin-top: 50px;
 
-        .column-address {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-                width: 35%;
-            height: auto;
-            padding: 50px;
-                margin: 0 50px 0 50px;
+//         .column-address {
+//             display: flex;
+//             flex-direction: column;
+//             justify-content: center;
+//                 width: 35%;
+//             height: auto;
+//             padding: 50px;
+//                 margin: 0 50px 0 50px;
 
-            span {
-                max-width: 280px;
-                @include secondary-font-commonStyles();
-                color: $secondary-font-color;
-            }
-        }
+//             span {
+//                 max-width: 280px;
+//                 @include secondary-font-commonStyles();
+//                 color: $secondary-font-color;
+//             }
+//         }
 
-        .column-links,
-        .column-help {
-            width: 16%;
-            height: auto;
+//         .column-links,
+//         .column-help {
+//             width: 16%;
+//             height: auto;
 
-            span {
-                display: block;
-                color: $secondary-font-color;
-                font-family: Poppins;
-                font-size: 16px;
-                font-weight: 500;
-                line-height: 24px;
-                letter-spacing: 0em;
-                text-align: left;
-                margin-bottom: 50px;
-            }
+//             span {
+//                 display: block;
+//                 color: $secondary-font-color;
+//                 font-family: Poppins;
+//                 font-size: 16px;
+//                 font-weight: 500;
+//                 line-height: 24px;
+//                 letter-spacing: 0em;
+//                 text-align: left;
+//                 margin-bottom: 50px;
+//             }
 
-            ul {
-                list-style-type: none;
+//             ul {
+//                 list-style-type: none;
 
-                li {
-                    margin-bottom: 30px;
+//                 li {
+//                     margin-bottom: 30px;
 
-                    a {
-                        text-decoration: none;
-                        line-height: 30px;
-                        color: $primary-font-color;
-                        @include primary-font-commonStyles();
-                    }
-                }
-            }
-        }
+//                     a {
+//                         text-decoration: none;
+//                         line-height: 30px;
+//                         color: $primary-font-color;
+//                         @include primary-font-commonStyles();
+//                     }
+//                 }
+//             }
+//         }
 
-        .column-newsletter {
-            width: 33%;
-            height: auto;
-            padding-left: 80px;
-            margin-left: 60px;
+//         .column-newsletter {
+//             width: 33%;
+//             height: auto;
+//             padding-left: 80px;
+//             margin-left: 60px;
 
-            span {
-                display: block;
-                @include primary-font-commonStyles();
-                color: $secondary-font-color;
-                margin-bottom: 50px;
-            }
+//             span {
+//                 display: block;
+//                 @include primary-font-commonStyles();
+//                 color: $secondary-font-color;
+//                 margin-bottom: 50px;
+//             }
 
-            .subscribe {
-                width: 400px;
+//             .subscribe {
+//                 width: 400px;
 
-                .subscribe-form {
-                    display: flex;
-                    align-items: center;
+//                 .subscribe-form {
+//                     display: flex;
+//                     align-items: center;
 
-                    input[type="email"] {
-                        width: 50%;
-                        margin-right: 10px;
-                        border: none;
-                        border-bottom: 1px solid $primary-font-color;
-                        padding-bottom: 10px;
-                        font-family: Poppins;
-                        font-size: 14px;
-                        font-weight: 400;
-                        line-height: 21px;
-                        letter-spacing: 0em;
-                        text-align: left;
+//                     input[type="email"] {
+//                         width: 50%;
+//                         margin-right: 10px;
+//                         border: none;
+//                         border-bottom: 1px solid $primary-font-color;
+//                         padding-bottom: 10px;
+//                         font-family: Poppins;
+//                         font-size: 14px;
+//                         font-weight: 400;
+//                         line-height: 21px;
+//                         letter-spacing: 0em;
+//                         text-align: left;
 
-                        &:focus {
-                            outline: none;
-                        }
-                    }
+//                         &:focus {
+//                             outline: none;
+//                         }
+//                     }
 
-                    button {
-                        background: none;
-                        border: none;
-                        border-bottom: 1px solid $primary-font-color;
-                        padding-bottom: 10px;
-                        color: $primary-font-color;
-                        cursor: pointer;
-                        font-family: Poppins;
-                        font-size: 14px;
-                        font-weight: 500;
-                        line-height: 21px;
-                        letter-spacing: 0em;
-                        text-align: left;
+//                     button {
+//                         background: none;
+//                         border: none;
+//                         border-bottom: 1px solid $primary-font-color;
+//                         padding-bottom: 10px;
+//                         color: $primary-font-color;
+//                         cursor: pointer;
+//                         font-family: Poppins;
+//                         font-size: 14px;
+//                         font-weight: 500;
+//                         line-height: 21px;
+//                         letter-spacing: 0em;
+//                         text-align: left;
 
-                        &:hover {
-                            color: darkblue; // 鼠标悬停时的颜色变化
+//                         &:hover {
+//                             color: darkblue; // 鼠标悬停时的颜色变化
 
-                            &:focus {
-                                outline: none;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+//                             &:focus {
+//                                 outline: none;
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
 
-    .container-copyright {
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-        height: 59px;
-        margin: auto;
+//     .container-copyright {
+//         display: flex;
+//         flex-direction: column;
+//         width: 90%;
+//         height: 59px;
+//         margin: auto;
 
-        .footer-line {
-            width: 100%;
-            height: 1px;
-            flex-shrink: 0;
-            background-color: $footer-line-color;
-            opacity: 0.1;
-            // border: 1px solid $footer-line-color;
-            // border: 1px solid red;
-        }
+//         .footer-line {
+//             width: 100%;
+//             height: 1px;
+//             flex-shrink: 0;
+//             background-color: $footer-line-color;
+//             opacity: 0.1;
+//             // border: 1px solid $footer-line-color;
+//             // border: 1px solid red;
+//         }
         
-        .site-info {
-            width: 100%;
-            height: 58px;
-            margin: 20px 0 20px 0;
-        }
-    }
-}
+//         .site-info {
+//             width: 100%;
+//             height: 58px;
+//             margin: 20px 0 20px 0;
+//         }
+//     }
+// }
