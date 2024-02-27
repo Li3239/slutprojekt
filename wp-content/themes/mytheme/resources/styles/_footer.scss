@@ -1,76 +1,214 @@
-<footer>
-    <section class="container">
-        <div class="column-address">
-            <span class="footer-address-title">URBAN OUTFITTERS</span>
-            <span class="footer-address-info"><?= get_option('store_footer_info'); ?></span>
-            <div class="footer-address">
-                <span><?= get_option('store_address'); ?></span>
-                <span><?= get_option('store_tel'); ?></span>
-                <span><?= get_option('store_email'); ?></span>
-            </div>
-            <?php
-            $menu = array(
-                'theme_location' => 'footer_social_media',
-                'menu_id' => 'footer_social_media',
-                'container' => 'nav',
-                'container_class' => 'menu'
-            );
-            wp_nav_menu($menu);
-            ?>
-        </div>
-        <div class="column-shopping">
-            <span class="category">SHOPPING</span>
-            <?php
-            $menu = array(
-                'theme_location' => 'footer_shopping',
-                'menu_id' => 'footer_shopping',
-                'container' => 'nav',
-                'container_class' => 'menu'
-            );
-            wp_nav_menu($menu);
-            ?>
-        </div>
-        <div class="column-links">
-            <span class="category">MORE LINK</span>
-            <?php
-            $menu = array(
-                'theme_location' => 'footer_links',
-                'menu_id' => 'footer_links',
-                'container' => 'nav',
-                'container_class' => 'menu'
-            );
-            wp_nav_menu($menu);
-            ?>
-        </div>
-        <div class="column-newsletter">
-            <span class="category">Newsletter</span>
-            <div class="subscribe">
-                <form class="subscribe-form">
-                    <input type="email" placeholder="Enter Your Email Address">
-                    <button type="submit">SUBSCRIBE</button>
-                </form>
-            </div>
-        </div>
-    </section>
+footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 495px;
+    background-color: $footer-primary-background-color;
+
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+        height: 312px;
+        width: 100%;
+        margin: auto;
+        margin-top: 50px;
+
+        .column-address {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 35%;
+            height: auto;
+            padding-left: 50px;
+
+            .footer-address-title {
+                @include footer-address-title-style;
+            }
+
+            .footer-address-info {
+                @include footer-address-info-style;
+                margin-bottom: 50px;
+                max-width: 300px;
+                margin: 50px 0 50px 0;
+            }
+
+            .footer-address {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 100%;
+                height: auto;
+                margin-bottom: 50px;
+
+                span {
+                    margin-bottom: 10px;
+                    @include footer-address-style;
+                }
+            }
+
+            nav.menu {
+                #footer_social_media {
+                    display: flex;
+                    justify-content: space-between;
+                    max-width: 260px;
+
+                    li {
+                        font-size: 0;
+                    }
+
+                    li.facebook::before {
+                        content: "";
+                        display: inline-block;
+                        width: 10px;
+                        height: 20px;
+                        flex-shrink: 0;
+                        background-size: cover;
+                        background-image: url('../images/facebook.png');
+                    }
+
+                    li.twitter::before {
+                        content: "";
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        flex-shrink: 0;
+                        background-size: cover;
+                        background-image: url('../images/twitter.png');
+                    }
+
+                    li.instagram::before {
+                        content: "";
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        flex-shrink: 0;
+                        background-size: cover;
+                        background-image: url('../images/instagram.png');
+                    }
+
+                    li.youtube::before {
+                        content: "";
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        flex-shrink: 0;
+                        background-size: cover;
+                        background-image: url('../images/youtube.png');
+                    }
+                }
+            }
+        }
+
+        .column-shopping,
+        .column-links {
+            width: 16%;
+            height: auto;
+
+            span.category {
+                display: block;
+                margin-bottom: 30px;
+                @include footer-shopping-links-title-style;
+            }
+
+            ul {
+                list-style-type: none;
+
+                li {
+                    margin-bottom: 32px;
+
+                    a {
+                        text-decoration: none;
+                        line-height: 30px;
+                        @include footer-shopping-links-style;
+                    }
+                }
+            }
+        }
 
 
-    <section class="container-copyright">
-        <div class="footer-line"></div>
-        <span class="site-info">
-            <?= get_option("store_copyright") ?>
-        </span>
-    </section>
-</footer>
-</body>
 
-</html>
+        // .column-newsletter {
+        //     width: 33%;
+        //     height: auto;
+        //     padding-left: 80px;
+        //     margin-left: 60px;
 
-<?php
-// submit form input
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // get email
-    $email = $_POST['email'];
-    // do something(check email, verify, save...)
-    echo ('Your inputed email is : ' . $email);
+        //     span {
+        //         display: block;
+        //         // @include primary-font-commonStyles();
+        //         color: $secondary-font-color;
+        //         margin-bottom: 50px;
+        //     }
+
+        //     .subscribe {
+        //         width: 400px;
+
+        //         .subscribe-form {
+        //             display: flex;
+        //             align-items: center;
+
+        //             input[type="email"] {
+        //                 width: 50%;
+        //                 margin-right: 10px;
+        //                 border: none;
+        //                 border-bottom: 1px solid $primary-font-color;
+        //                 padding-bottom: 10px;
+        //                 font-family: Poppins;
+        //                 font-size: 14px;
+        //                 font-weight: 400;
+        //                 line-height: 21px;
+        //                 letter-spacing: 0em;
+        //                 text-align: left;
+
+        //                 &:focus {
+        //                     outline: none;
+        //                 }
+        //             }
+
+        //             button {
+        //                 background: none;
+        //                 border: none;
+        //                 border-bottom: 1px solid $primary-font-color;
+        //                 padding-bottom: 10px;
+        //                 color: $primary-font-color;
+        //                 cursor: pointer;
+        //                 font-family: Poppins;
+        //                 font-size: 14px;
+        //                 font-weight: 500;
+        //                 line-height: 21px;
+        //                 letter-spacing: 0em;
+        //                 text-align: left;
+        //                 &:hover {
+        //                     color: darkblue; // 鼠标悬停时的颜色变化
+        //                     &:focus {
+        //                         outline: none;
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+        .container-copyright {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            height: 59px;
+            margin: auto;
+
+            .footer-line {
+                width: 100%;
+                height: 1px;
+                flex-shrink: 0;
+                background-color: $footer-line-color;
+                opacity: 0.1;
+            }
+
+            .site-info {
+                width: 100%;
+                height: 58px;
+                margin: 20px 0 20px 0;
+            }
+        }
+    }
 }
-?>
