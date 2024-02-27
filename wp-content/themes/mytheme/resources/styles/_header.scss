@@ -1,0 +1,65 @@
+
+// Header styles
+header {
+    background-color: $primary-background-color;
+    color: $primary-text-color;
+    padding: 20px;
+
+    /* Header section 1 styles */
+    .header-section1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h1 {
+            font-size: 24px;
+        }
+
+        .header-icons {
+            display: flex;
+
+            .header-icon {
+                width: 30px;
+                height: 30px;
+                margin-right: 29px;
+                color: $primary-text-color;
+                
+            }
+        }
+    }
+
+    /* Header section 2 styles */
+    .header-section2 {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+
+        .header-menu {
+            display: flex;
+
+            ul {
+                list-style: none;
+                display: flex;
+
+                li {
+                    margin-right: 30px;
+
+                    a {
+                        color: $primary-text-color;
+                        text-decoration: none;
+                        font-weight: 700;
+                        font-size: 16px;
+                        margin-right: 113px;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Horizontal line styles */
+    hr {
+        border: none;
+        border-top: 1px solid $primary-text-color;
+        margin: 20px 0;
+    }
+}
