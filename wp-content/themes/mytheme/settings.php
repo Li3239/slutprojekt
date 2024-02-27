@@ -206,61 +206,22 @@ function mytheme_add_settings_init()
     );
 
     //----------------------------
-    // store information title 1
-    //----------------------------
-    register_setting(
-        "butik",
-        "store_info_title_1"
-    );
-
-    add_settings_field(
-        "store_info_title_1",       //id
-        "Store information title 1", //title(will be shown on setting-butik page)
-        "mytheme_section_setting",  //callback function
-        "butik",                    //page
-        "butik_general",            //section
-        array(                      //multiple parameter
-            "option_name" => "store_info_title_1",
-            "option_type" => "text"
-        )
-    );
-
-    //----------------------------
     // store information content 1
     //----------------------------
     register_setting(
         "butik",
-        "store_info_content_1"
+        "store_shop_hero_title"
     );
 
     add_settings_field(
-        "store_info_content_1",       //id
-        "Store information content 1", //title(will be shown on setting-butik page)
+        "store_shop_hero_title",      //id
+        "Shop hero title",            //title(will be shown on setting-butik page)
         "mytheme_section_setting",    //callback function
         "butik",                      //page
         "butik_general",              //section
         array(                        //multiple parameter
-            "option_name" => "store_info_content_1",
+            "option_name" => "store_shop_hero_title",
             "option_type" => "textarea"
-        )
-    );
-    //----------------------------
-    // store information title 2
-    //----------------------------
-    register_setting(
-        "butik",
-        "store_info_title_2"
-    );
-
-    add_settings_field(
-        "store_info_title_2",       //id
-        "Store information title 2", //title(will be shown on setting-butik page)
-        "mytheme_section_setting",  //callback function
-        "butik",                    //page
-        "butik_general",            //section
-        array(                      //multiple parameter
-            "option_name" => "store_info_title_2",
-            "option_type" => "text"
         )
     );
 
@@ -269,56 +230,36 @@ function mytheme_add_settings_init()
     //----------------------------
     register_setting(
         "butik",
-        "store_info_content_2"
+        "store_shop_hero_sub_title"
     );
 
     add_settings_field(
-        "store_info_content_2",       //id
-        "Store information content 2", //title(will be shown on setting-butik page)
+        "store_shop_hero_sub_title",    //id
+        "Shop hero sub title",         //title(will be shown on setting-butik page)
         "mytheme_section_setting",    //callback function
         "butik",                      //page
         "butik_general",              //section
         array(                        //multiple parameter
-            "option_name" => "store_info_content_2",
+            "option_name" => "store_shop_hero_sub_title",
             "option_type" => "textarea"
         )
     );
-    //----------------------------
-    // store information title 3
-    //----------------------------
-    register_setting(
-        "butik",
-        "store_info_title_3"
-    );
-
-    add_settings_field(
-        "store_info_title_3",       //id
-        "Store information title 3", //title(will be shown on setting-butik page)
-        "mytheme_section_setting",  //callback function
-        "butik",                    //page
-        "butik_general",            //section
-        array(                      //multiple parameter
-            "option_name" => "store_info_title_3",
-            "option_type" => "text"
-        )
-    );
-
     //----------------------------
     // store information content 3
     //----------------------------
     register_setting(
         "butik",
-        "store_info_content_3"
+        "store_shop_hero_info"
     );
 
     add_settings_field(
-        "store_info_content_3",       //id
-        "Store information content 3", //title(will be shown on setting-butik page)
+        "store_shop_hero_info",       //id
+        "Shop hero info",             //title(will be shown on setting-butik page)
         "mytheme_section_setting",    //callback function
         "butik",                      //page
         "butik_general",              //section
         array(                        //multiple parameter
-            "option_name" => "store_info_content_3",
+            "option_name" => "store_shop_hero_info",
             "option_type" => "textarea"
         )
     );
@@ -376,76 +317,3 @@ function mytheme_section_setting($args)
               />';
     }
 }
-
-
-
-// function mytheme_add_top_block_settings_init()
-// {
-//     add_settings_section(
-//         'top_block', 
-//         'Top Block Setting', 
-//         'mytheme_add_project_top_settings_section_general',
-//         'butik'                       
-//     );
-
-//     register_setting(
-//         "butik",  
-//         "top_block_title_1"
-//     );
-
-//     add_settings_field(
-//         "top_block_title_1",
-//         "Title_1",          
-//         "mytheme_section_setting",
-//         "butik",                  
-//         "top_block",              
-//         array(                    
-//             "option_name" => "top_block_title_1",
-//             "option_type" => "text"
-//         )
-//     );
-
-//     register_setting(
-//         "butik", 
-//         "top_block_title_2"
-//     );
-
-//     add_settings_field(
-//         "top_block_title_2",
-//         "Title_2",          
-//         "mytheme_section_setting",
-//         "butik",                  
-//         "top_block",              
-//         array(                    
-//             "option_name" => "top_block_title_2",
-//             "option_type" => "text"
-//         )
-//     );
-
-//     register_setting(
-//         "butik",    
-//         "top_block_image" 
-//     );
-
-//     add_settings_field(
-//         "top_block_image",
-//         "Image Url",      
-//         "mytheme_section_setting", 
-//         "butik",                   
-//         "top_block",              
-//         array(                    
-//             "option_name" => "top_block_image",
-//             "option_type" => "text"
-//         )
-//     );
-
-// }
-// add_action('admin_init', 'mytheme_add_top_block_settings_init');
-
-// function mytheme_add_project_top_settings_section_general()
-// {
-//     echo "<hr>";
-//     echo "<hr>";
-//     echo "<p> Top Block shortcode setting</p>";
-//     echo "<hr>";
-// }
