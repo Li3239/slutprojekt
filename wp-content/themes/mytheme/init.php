@@ -12,6 +12,7 @@ function mytheme_enqueue()
 }
 add_action("wp_enqueue_scripts", "mytheme_enqueue");
 
+
 function mytheme_init()
 {
     // add theme support
