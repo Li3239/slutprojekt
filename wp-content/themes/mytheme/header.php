@@ -34,7 +34,7 @@
 
                 <div class="header-icons">
 
-                    <img src="<?= get_template_directory_uri() . "/build/assets/images/search.svg"; ?>"
+                    <img src="<?= get_template_directory_uri() . "/resources/assets/images/search.svg"; ?>"
                         class="header-icon" />
                     <img src="<?= get_template_directory_uri() . "/build/assets/images/person.png"; ?>"
                         class="header-icon" />

@@ -187,3 +187,68 @@ main ul.products li.product .add_to_cart_button {
   line-height: 40px;
   border-radius: 3px;
 }
+
+.home-section1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.home-section1 .home-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.home-section1 .home-top .header-icon {
+  margin-right: 10px;
+}
+
+.home-section1 .home-top h2 {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.5019607843);
+  margin: 0;
+}
+
+.home-section1 ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.home-section1 ul li {
+  margin-right: 20px;
+}
+
+.home-section1 .wp-block-columns {
+  background: rgba(219, 208, 204, 0.8);
+  border: 1px solid #000000;
+}
+
+.home-section1 .header-section2-part2-p1 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #323334;
+  margin-top: 30px;
+}
+
+.home-section1 .header-section2-part2-p2 {
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: 0em;
+  text-align: left;
+}
