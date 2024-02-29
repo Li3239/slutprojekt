@@ -273,3 +273,33 @@ function customer_focus_block()
 <?php
 }
 add_shortcode('mytheme_shortcode_focus_block', 'customer_focus_block');
+
+
+function home_top_1() {
+    ?>
+
+    <div class="home-section1">
+    <div class="home-top">
+        <img src="<?= get_template_directory_uri() . "/resources/assets/images/delievery.svg"; ?>"
+            class="header-icon" />
+        <img src="<?= get_template_directory_uri() . "/resources/images/delievery.svg"; ?>" class="header-icon" />
+        <h2>FREE SHIPPING</h2>
+    </div>
+
+    <div class="home-top">
+        <img src="<?= get_template_directory_uri() . "/resources/assets/images/moneyback.svg"; ?>"
+            class="header-icon" />
+        <img src="<?= get_template_directory_uri() . "/resources/images/moneyback.svg"; ?>" class="header-icon" />
+        <h2>100% MONEY BACK</h2>
+    </div>
+
+    <div class="home-top">
+        <img src="<?= get_template_directory_uri() . "/resources/assets/images/support.svg"; ?>"
+            class="header-icon" />
+        <img src="<?= get_template_directory_uri() . "/resources/images/support.svg"; ?>" class="header-icon" />
+        <h2>SUPPORT 24/7</h2>
+    </div>
+</div>
+<?php
+}
+add_shortcode("shortcode_home_top_1", "home_top_1");
