@@ -4,6 +4,10 @@
 require_once('vite.php');
 require_once('ajax.php');
 require_once('settings.php');
+require_once('shortcodes.php');
+require_once('custom-widgets.php');
+//__DIR__: mytheme
+require_once(__DIR__ . "/hooks/shop-product-hooks.php");
 
 function mytheme_enqueue()
 {

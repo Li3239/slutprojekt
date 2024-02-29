@@ -55,7 +55,8 @@ class Vite
         if (static::$isHot) {
             static::$server = file_get_contents(static::hotFilePath());
             $client = static::$server . '/@vite/client';
-
+            //$client = str_replace("https", "http", $client);
+            
             // if output
             if ($output) {
                 printf(

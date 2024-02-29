@@ -68,6 +68,19 @@ header hr {
 }
 main .woocommerce-products-header {
   background-color: transparent;
+main .custom-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+main .custom-container .custom-sidebar {
+  flex: 2;
+  align-items: start;
+  max-width: 300px;
+  margin: 0 50px;
+}
+main .custom-container .custom-products-list {
+  flex: 4;
 }
 main ul.products {
   display: flex;
@@ -119,7 +132,8 @@ main ul.products li.product a .image-frame .new {
   right: 10px;
   bottom: 10px;
 }
-main ul.products li.product a, main ul.products li.product h2 {
+main ul.products li.product a,
+main ul.products li.product h2 {
   color: grey;
   text-decoration: none;
 }
@@ -328,4 +342,126 @@ footer .container .container-copyright .site-info {
   width: 100%;
   height: 58px;
   margin: 20px 0 20px 0;
+}
+.shop-hero {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 256px;
+  background-color: #DCE1DA;
+}
+.shop-hero .shop-hero-title {
+  text-align: center;
+  font-family: Roboto;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 45px;
+  letter-spacing: 0em;
+  color: #323334;
+  margin-top: 44px;
+  margin-bottom: 20px;
+}
+.shop-hero .shop-hero-sub-title {
+  text-align: center;
+  font-family: Roboto;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: 0em;
+  color: #323334;
+  margin-bottom: 60px;
+}
+.shop-hero .shop-hero-info {
+  text-align: center;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  color: #323334;
+}
+#load_more_products {
+  display: block;
+  width: 371px;
+  height: 51px;
+  padding: 10px;
+  margin: 20px auto;
+  border: none;
+  background-color: #323334;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0em;
+}
+.email-content {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 500px;
+  height: 800px;
+  margin: auto;
+}
+.email-content .email-header-title {
+  width: 100%;
+  height: 50px;
+  background-color: purple;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.email-content .email-header-title p {
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #FFFFFF;
+}
+.email-content .email-order-inner {
+  margin-bottom: 20px;
+}
+.email-content .email-order-inner .customer-name {
+  font-weight: bold;
+  display: block;
+}
+.email-content .email-order-inner .order-summary-info,
+.email-content .email-order-inner .order-payment-info {
+  display: block;
+  margin-bottom: 10px;
+}
+.email-content .email-order-inner #order-title {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.email-content .email-order-detail table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.email-content .email-order-detail table th,
+.email-content .email-order-detail table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+.email-content .email-order-detail table th {
+  background-color: #f9f9f9;
+}
+.email-content .email-shipping-billing {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.email-content .email-shipping-billing .email-billing {
+  width: 48%;
+}
+.email-content .email-shipping-billing .email-billing h2 {
+  margin-bottom: 10px;
+}
+.email-content .email-shipping-billing .email-billing .address p {
+  margin: 0 0 10px;
 }
