@@ -1,7 +1,9 @@
 <?php
 
+
 require_once('vite.php');
 require_once('ajax.php');
+require_once('settings.php');
 
 function mytheme_enqueue()
 {
@@ -20,10 +22,10 @@ function mytheme_init()
     $menu = array(
         'main_menu' => 'main_menu',
         'main_menu_icons' => 'main_menu_icons',
-        'footer_address' => 'footer_address',
+        'footer_social_media' => 'footer_social_media',
+        'footer_shopping' => 'footer_shopping',
         'footer_links' => 'footer_links',
-        'footer_help' => 'footer_help',
-        'footer_newsletter' => 'footer_newsletter'
+        'footer_blog' => 'footer_blog'
     );
     register_nav_menus($menu);
 }
