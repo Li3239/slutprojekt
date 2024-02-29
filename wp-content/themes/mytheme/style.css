@@ -1,11 +1,11 @@
-.header-section2-container{
+
+.home-section2-container{
     background-color:  #DBD0CCCC;
     border: 1px solid #000000;
     box-shadow: 0px 4px 4px 0px #00000040;
-
 }
 
-.header-section2-part2-p1{
+.home-section2-part2-p1{
     font-family: Roboto;
     font-size: 22px;
     font-weight: 700;
@@ -17,7 +17,7 @@
     margin-bottom: 20px
 }
 
-.header-section2-part2-p2{
+.home-section2-part2-p2{
     font-family: Roboto;
     font-size: 48px;
     font-weight: 700;
@@ -28,6 +28,7 @@
 }
 
 .wp-block-button__link {
+   font-family:Roboto ;
     color: #fff;
     box-shadow: none;
     text-decoration: none;

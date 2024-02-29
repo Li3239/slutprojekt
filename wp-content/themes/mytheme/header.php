@@ -36,7 +36,7 @@
 
                     <img src="<?= get_template_directory_uri() . "/resources/images/search.svg"; ?>"
                         class="header-icon" />
-                    <img src="<?= get_template_directory_uri() . "/resources/images/person.png"; ?>"
+                    <img src="<?= get_template_directory_uri() . "/resources/images/person.svg"; ?>"
                         class="header-icon" />
                     <img src="<?= get_template_directory_uri() . "/resources/images/basket.webp"; ?>"
                         class="header-icon" />
