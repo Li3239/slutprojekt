@@ -34,13 +34,13 @@
 
                 <div class="header-icons">
 
-                    <img src="<?= get_template_directory_uri() . "/resources/assets/images/search.svg"; ?>"
+                    <img src="<?= get_template_directory_uri() . "/resources/images/search.svg"; ?>"
                         class="header-icon" />
-                    <img src="<?= get_template_directory_uri() . "/build/assets/images/person.png"; ?>"
+                    <img src="<?= get_template_directory_uri() . "/resources/images/person.png"; ?>"
                         class="header-icon" />
-                    <img src="<?= get_template_directory_uri() . "/build/assets/images/basket.webp"; ?>"
+                    <img src="<?= get_template_directory_uri() . "/resources/images/basket.webp"; ?>"
                         class="header-icon" />
-                    <img src="<?= get_template_directory_uri() . "/build/assets/images/favorite.png"; ?>"
+                    <img src="<?= get_template_directory_uri() . "/resources/images/favorite.png"; ?>"
                         class="header-icon" />
 
                 </div>
