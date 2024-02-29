@@ -1,4 +1,14 @@
 <?php
+// $_SERVER["HTTPS"] = "on";
+// define('WP_HOME', 'http://slutprojekt.test');
+// define('WP_SITEURL', 'http://slutprojekt.test');
+
+//Begin Really Simple SSL session cookie settings
+@ini_set('session.cookie_httponly', true);
+@ini_set('session.cookie_secure', true);
+@ini_set('session.use_only_cookies', true);
+//END Really Simple SSL cookie settings
+
 /**
  * The base configuration for WordPress
  *
@@ -79,7 +89,9 @@ $table_prefix = 'wp_';
  *
  * @link https://wordpress.org/documentation/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', false );
+define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', false);
 
 /* Add any custom values between this line and the "stop editing" line. */
 

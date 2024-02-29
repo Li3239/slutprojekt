@@ -1,0 +1,28 @@
+//------------------------
+// shop page hero section
+//------------------------
+.shop-hero {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 256px;
+    background-color: $shop-hero-background-color;
+
+    .shop-hero-title {
+        text-align: center;
+        @include shop-hero-title-font-style;
+        margin-top: 44px;
+        margin-bottom: 20px;
+    }
+
+    .shop-hero-sub-title {
+        text-align: center;
+        @include shop-hero-sub-title-font-style;
+        margin-bottom: 60px;
+    }
+
+    .shop-hero-info {
+        text-align: center;
+        @include shop-hero-info-font-style;
+    }
+}
