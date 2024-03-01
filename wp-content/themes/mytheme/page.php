@@ -33,5 +33,16 @@
     
     ?>
 
+    <div class="column-newsletter">
+
+        <div class="subscribe">
+            <form class="subscribe-form1">
+                <input type="email" placeholder="Enter your e-mail Address">
+                <button type="submit" class="email"><img src='resources/images/facebook.png' alt=""></button>
+            </form>
+        </div>
+
+
+
 </main>
 <?php get_footer(); ?>
