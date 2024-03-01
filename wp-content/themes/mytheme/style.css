@@ -142,7 +142,14 @@ height: 60px;
 .wp-block-cover.home-cover {
     width: 472px;
     height: 733px;
-    margin-left: 30px;
+    margin-left: 445px;
+    margin-top: -45px;
+}
+
+.wp-block-cover.home-cover1{
+    width: 472px;
+    height: 733px;
+    margin-left: 29px;
     margin-top: 11px;
 }
 
@@ -222,10 +229,10 @@ ul.is-flex-container.columns-3 {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    margin-right: -68px;
+    /* margin-right: -60px; */
     margin-left: -403px;
-    margin-left: -26px;
-    width: 928px;
+   
+    width: 1141px;
 }
 /* Style the anchor tags */
 ul.is-flex-container.columns-3 li {
@@ -244,15 +251,41 @@ ul.is-flex-container.columns-3 li a {
     font-weight: 700;
     line-height: 21px;
     letter-spacing: 0em;
-    text-decoration: none; 
-    display: block; 
-    width: 290px;
-    padding: 10px; 
+    text-decoration: none;
+    display: block;
+    /* width: 380px; */
+    padding: -23px;
     color: #323334;
+    margin-left: -55px;
+    margin-top: 11px;
+}
+.product-image{
+    width:30px;
+    height: 50px;
 
 }
 
+.wc-block-components-product-image img {
+    border-radius: inherit;
+    height: auto;
+    vertical-align: middle;
+    /* width: 100%; */
+    width: 400px;
+    margin-left: 156px;
+    margin-right: 163px;
+}
 
+.wc-block-product-template {
+    list-style: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    /* max-width: 100%; */
+    /* padding: 0; */
+}
+
+.wp-image-257 {
+    width: 100%;
+}
 /* Style the images */
 /* ul.is-flex-container.columns-3 li img {
     object-fit: cover;

@@ -30,3 +30,70 @@ function theme_register_menus() {
     ) );
 }
 add_action( 'after_setup_theme', 'theme_register_menus' );
+
+
+
+
+
+// Define a custom shortcode to display products with specific attributes
+function display_product_shortcode( $atts ) {
+    // Shortcode attributes
+    $atts = shortcode_atts( array(
+        'id'          => '',            // Default product ID
+        'title'       => true,          // Whether to display the title (default: true)
+        'price'       => true,          // Whether to display the price (default: true)
+        'description' => true,         // Whether to display the description (default: false)
+    ), $atts, 'product' );
+
+    // Initialize output variable
+    $output = '';
+
+    // Product query arguments
+    $args = array(
+        'p'              => $atts['id'], // Product ID
+        'post_type'      => 'product',   // WooCommerce product post type
+        'posts_per_page' => 1,           // Display only one product
+    );
+
+    // Product query
+    $products = new WP_Query( $args );
+
+    // Check if products were found
+    if ( $products->have_posts() ) {
+        // Start the output buffer
+        ob_start();
+
+        // Loop through products
+        while ( $products->have_posts() ) {
+            $products->the_post();
+
+            // Display the title if attribute is set to true
+            if ( $atts['title'] ) {
+                the_title( '<h2>', '</h2>' );
+            }
+
+            // Display the price if attribute is set to true
+            if ( $atts['price'] ) {
+                wc_get_template_part( 'content', 'single-product' );
+            }
+
+            // Display the description if attribute is set to true
+            if ( $atts['description'] ) {
+                the_content();
+            }
+        }
+
+        // Get and clean the output buffer
+        $output = ob_get_clean();
+
+        // Reset post data
+        wp_reset_postdata();
+    } else {
+        // No products found
+        $output = '<p>No product found</p>';
+    }
+
+    // Return the output
+    return $output;
+}
+add_shortcode( 'product', 'display_product_shortcode' );

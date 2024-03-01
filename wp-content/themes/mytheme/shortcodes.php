@@ -153,7 +153,6 @@ function customer_email_template()
     // Return cached content and clear cache
     return ob_get_clean();
 }
-add_shortcode('shortcode_email_template', 'customer_email_template');
 
 
 function home_top_1() {

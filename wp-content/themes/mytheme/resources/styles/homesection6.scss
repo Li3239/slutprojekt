@@ -1,0 +1,129 @@
+main ul.products li.product img.attachment-woocommerce_thumbnail {
+    max-width: 100%;
+    height: 300px;
+    width: auto;
+    display: none;
+}
+
+main ul.products li.product .add_to_cart_button {
+    display: block;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    /* height: 40px; */
+    line-height: 40px;
+    border-radius: 3px;
+}
+.woocommerce ul.products li.product .button {
+    font-family: Roboto;
+    color: #fff;
+    box-shadow: none;
+    text-decoration: none;
+    padding: calc(0.667em + 2px) calc(1.333em + 2px);
+    font-size: 1.125em;
+    background: rgb(254 254 253);
+    top: 259px;
+    border: 1px solid #323334;
+    color: #323334;
+    margin-top: -178px;
+    border-radius: 1px;
+    border: 1px solid #323334;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    width: 91px;
+    height: 21px;
+    text-align: center;
+    align-content: center;
+}
+
+.woocommerce ul.products li.product .price {
+    display: block;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+    font-size: .857em;
+    font-family: Roboto;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 33px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+main ul.products li.product .price ins {
+    font-family: Roboto;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 33px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #7B5136;
+}
+
+.woocommerce ul.products li.product .onsale {
+    display: none;
+}
+
+main ul.products li.product h2 {
+    color: #323334;
+    text-decoration: none;
+    font-family: Roboto;
+font-size: 28px;
+font-weight: 700;
+line-height: 33px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+    
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+    margin-top: -605px;
+    margin-left: 178px;
+    margin-bottom: 237px;
+    background: rgba(255, 255, 255, 0.8980392157);
+    width: 544px;
+    margin-top: -470px;
+    height: 352px;
+    }
+
+
+    .woocommerce ul.products li.product a {
+        text-decoration: none;
+        margin-left: 87px;
+        margin-top: 81px;
+    }
+
+    
+    .subscribe-form1 {
+        display: flex;
+        align-items: center;
+        width: 40px;
+        margin-left: 1593px;
+        margin-bottom: 41px;
+    
+        input[type="email"] {
+            flex: 1; 
+            padding: 8px; 
+            margin-right: 5px; 
+            width: 150px; 
+            text-align: right; 
+        }
+    
+        button.email {
+            width: 40px; // Set width of the button
+            height: 40px; // Set height of the button
+            padding: 0; // Remove padding
+            background: none; // Remove background
+            border: none; // Remove border
+            cursor: pointer; // Show pointer cursor on hover
+    
+            img {
+               
+                    width: 35px;
+                
+            }
+        }
+    }
+    
+    
