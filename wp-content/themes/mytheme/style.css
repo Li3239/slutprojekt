@@ -37,9 +37,9 @@ Text Domain: my-moody-studio-theme
     text-align: left;
     color: #A86A3D;
 }
-.wp-block-button__link.home-section2-button{
+/* .wp-block-button__link.home-section2-button{
     margin-left: 6px;
-}
+} */
 
 
 /**********SECTION-03*******/
@@ -110,18 +110,18 @@ Text Domain: my-moody-studio-theme
     margin-left: -73px;
 }
 
-.wp-block-button__link.home-section3-part2-button{
+/* .wp-block-button__link.home-section3-part2-button{
     margin-left: 30px;
-}
+} */
 
-.home-section3-part2-p{
+/* .home-section3-part2-p{
     font-family: Roboto;
     line-height: 33px;
     letter-spacing: 0em;
     text-align: left;
     margin-top: 77px;
 
-}
+} */
 
 .home-section3-part2-button{
     font-family: Roboto;
@@ -134,9 +134,9 @@ Text Domain: my-moody-studio-theme
     margin-top: -28px;
 }
 
-.wp-block-image .size-full{
+/* .wp-block-image .size-full{
 height: 60px;
-}
+} */
 /*********SECTION-04**********/
 
 .wp-block-cover.home-cover {
@@ -165,10 +165,10 @@ home-section4-part1-p2 {
     padding: -38px;
     width: 235px;
 }
-.wp-block-cover__inner-container.is-layout-flow.wp-block-cover-is-layout-flow{
+/* .wp-block-cover__inner-container.is-layout-flow.wp-block-cover-is-layout-flow{
     margin-left: 30px;
     width: 375px;
-}
+} */
 
 
 @media only screen and (max-width: 1280px) and (max-height: 800px) {
@@ -190,16 +190,16 @@ home-section4-part1-p2 {
     }
 }
 
-.wp-container-core-columns-layout-6.wp-container-core-columns-layout-6 {
+/* .wp-container-core-columns-layout-6.wp-container-core-columns-layout-6 {
    font-family: Roboto;
     margin-top: 66px;
     margin-left: 78px;
     margin-right: 30px;
     height: 40px;
-}
+} */
 
 
-.wp-block-button__link {
+ .wp-block-button__link {
     font-family: Roboto;
     color: #fff;
     box-shadow: none;
@@ -213,17 +213,20 @@ home-section4-part1-p2 {
     margin-top: 36px;
     border-radius: 1px;
 
-}
+} 
 
 /* Align ul horizontally */
+
+
 ul.is-flex-container.columns-3 {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     margin-right: -68px;
     margin-left: -403px;
+    margin-left: -26px;
+    width: 928px;
 }
-
 /* Style the anchor tags */
 ul.is-flex-container.columns-3 li {
     width: 33.33%; 
@@ -251,13 +254,13 @@ ul.is-flex-container.columns-3 li a {
 
 
 /* Style the images */
-ul.is-flex-container.columns-3 li img {
+/* ul.is-flex-container.columns-3 li img {
     object-fit: cover;
     margin-right: -38px;
     height: 630px;
     width: 449px;
     margin-left: -77px;
-}
+} 
 
 .has-text-align-center {
     margin-left: -88px;
@@ -265,3 +268,23 @@ ul.is-flex-container.columns-3 li img {
 .woocommerce-Price-amount{
     margin-left: -463px;
 }
+ul.is-flex-container.columns-3 {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-right: -68px;
+    margin-left: -403px;
+    margin-left: -26px;
+    width: 928px;
+}
+
+/* .wc-block-components-product-image img {
+    border-radius: inherit;
+    height: auto;
+    vertical-align: middle;
+    width: 100%;
+    /* width: 405px; */
+    /* margin-left: -126px; */
+    /* margin-right: 58px; */
+    /* height: -72px; */
+/* }  */
