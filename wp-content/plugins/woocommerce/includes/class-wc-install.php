@@ -2470,11 +2470,11 @@ EOT;
 	 */
 	protected static function get_cart_block_content() {
 		return '<!-- wp:woocommerce/cart -->
-<div class="wp-block-woocommerce-cart alignwide is-loading"><!-- wp:woocommerce/filled-cart-block -->
-<div class="wp-block-woocommerce-filled-cart-block"><!-- wp:woocommerce/cart-items-block -->
-<div class="wp-block-woocommerce-cart-items-block"><!-- wp:woocommerce/cart-line-items-block -->
-<div class="wp-block-woocommerce-cart-line-items-block"></div>
-<!-- /wp:woocommerce/cart-line-items-block -->
+// <div class="wp-block-woocommerce-cart alignwide is-loading"><!-- wp:woocommerce/filled-cart-block -->
+// <div class="wp-block-woocommerce-filled-cart-block"><!-- wp:woocommerce/cart-items-block -->
+// <div class="wp-block-woocommerce-cart-items-block"><!-- wp:woocommerce/cart-line-items-block -->
+// <div class="wp-block-woocommerce-cart-line-items-block"></div>
+// <!-- /wp:woocommerce/cart-line-items-block -->
 
 <!-- wp:woocommerce/cart-cross-sells-block -->
 <div class="wp-block-woocommerce-cart-cross-sells-block"><!-- wp:heading {"fontSize":"large"} -->
@@ -2487,11 +2487,7 @@ EOT;
 <!-- /wp:woocommerce/cart-cross-sells-block --></div>
 <!-- /wp:woocommerce/cart-items-block -->
 
-<!-- wp:woocommerce/cart-totals-block -->
-<div class="wp-block-woocommerce-cart-totals-block"><!-- wp:woocommerce/cart-order-summary-block -->
-<div class="wp-block-woocommerce-cart-order-summary-block"><!-- wp:woocommerce/cart-order-summary-heading-block -->
-<div class="wp-block-woocommerce-cart-order-summary-heading-block"></div>
-<!-- /wp:woocommerce/cart-order-summary-heading-block -->
+
 
 <!-- wp:woocommerce/cart-order-summary-coupon-form-block -->
 <div class="wp-block-woocommerce-cart-order-summary-coupon-form-block"></div>
@@ -2501,9 +2497,7 @@ EOT;
 <div class="wp-block-woocommerce-cart-order-summary-subtotal-block"></div>
 <!-- /wp:woocommerce/cart-order-summary-subtotal-block -->
 
-<!-- wp:woocommerce/cart-order-summary-fee-block -->
-<div class="wp-block-woocommerce-cart-order-summary-fee-block"></div>
-<!-- /wp:woocommerce/cart-order-summary-fee-block -->
+
 
 <!-- wp:woocommerce/cart-order-summary-discount-block -->
 <div class="wp-block-woocommerce-cart-order-summary-discount-block"></div>
