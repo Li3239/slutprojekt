@@ -4,7 +4,7 @@
 
     <?php do_shortcode("shortcode_home_top_1"); ?>
 
-    <!-- <div class="home-section1">
+     <div class="home-section1">
 
 
         <div class="home-top">
@@ -24,9 +24,7 @@
                 class="header-icon" />
             <h2>SUPPORT 24/7</h2>
         </div>
-    </div> -->
-
-
+    </div> 
 
 
 
@@ -38,6 +36,30 @@
     // do_action("mytheme_page_content_loaded");
     
     ?>
+
+    <div class="column-newsletter">
+
+        <div class="subscribe">
+            <form class="subscribe-form1">
+                <input type="email" placeholder="Enter your e-mail Address">
+                <button type="submit" class="email"><img src="resources/images/email.php" alt=""></button>
+            </form>
+        </div>
+
+
+
+</main>
+<?php get_footer(); ?>
+
+<?php
+// submit form input
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // get email
+    $email = $_POST['email'];
+    // do something(check email, verify, save...)
+    echo ('Your inputed email is : ' . $email);
+}
+
 $recent_posts = wp_get_recent_posts(
     array(
         'numberposts' => 2, // get newest 2 posts
@@ -52,27 +74,4 @@ if (count($recent_posts) > 0) {
     echo '</ul>';
 }
 
-    <div class="column-newsletter">
-
-        <div class="subscribe">
-            <form class="subscribe-form1">
-                <input type="email" placeholder="Enter your e-mail Address">
-                <button type="submit" class="email"><img src="resources/images/email.php" alt=""></button>
-            </form>
-        </div>
-        <?php
-// submit form input
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // get email
-    $email = $_POST['email'];
-    // do something(check email, verify, save...)
-    echo ('Your inputed email is : ' . $email);
-}
-
-
 ?>
-
-
-</main>
-<?php get_footer(); ?>
-
