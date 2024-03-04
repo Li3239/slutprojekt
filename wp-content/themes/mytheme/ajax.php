@@ -8,7 +8,7 @@ define("PRODUCT_QUANTITY_PER_PAGE", 12);
 function my_theme_enqueue_scripts()
 {
     // wp_enqueue_script('my-custom-load-more', get_stylesheet_directory_uri() . '/resources/js/lazyload.js', array('jquery'), '1.0', true);
-    wp_enqueue_script("mytheme_jquery", get_template_directory_uri() . "/resources/js/jquery.js", array(), false, array());
+    // wp_enqueue_script("mytheme_jquery", get_template_directory_uri() . "/resources/js/jquery.js", array(), false, array());
     wp_enqueue_script("mytheme_lazy_load", get_template_directory_uri() . "/resources/js/lazyload.js", array("mytheme_jquery"), false, array());
 
     // 本地化脚本以包含 AJAX URL 和 nonce
