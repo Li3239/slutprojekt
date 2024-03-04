@@ -1,6 +1,6 @@
 <?php
 
-define("PRODUCT_QUANTITY_PER_PAGE", 12); 
+define("PRODUCT_QUANTITY_PER_PAGE", 6); 
 
 /*
  * add js setting 
