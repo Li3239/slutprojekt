@@ -1,11 +1,34 @@
-@mixin footer-address-title-style {
+@mixin h1-common-font-style {
+    font-family: Roboto;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+@mixin h2-common-font-style {
     font-family: Roboto;
     font-size: 28px;
     font-weight: 700;
     line-height: 33px;
     letter-spacing: 0em;
     text-align: left;
-    color: $secondary-font-color;
+}
+@mixin h3-common-font-style {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+@mixin body-common-font-style {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
 }
 
 @mixin footer-address-info-style {
@@ -17,6 +40,14 @@
     text-align: left;
     color: $secondary-font-color;
     opacity: 0.5;
+}
+@mixin page-not-found-h2-style {
+    font-family: Roboto;
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 50px;
+    letter-spacing: 0em;
+    text-align: left;
 }
 
 @mixin footer-address-style {
@@ -40,15 +71,6 @@
     opacity: 0.7;
 }
 
-@mixin footer-shopping-links-title-style {
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 19px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: $secondary-font-color;
-}
 @mixin shop-hero-title-font-style {
     font-family: Roboto;
     font-size: 38px;
@@ -76,11 +98,47 @@
     color: $footer-primary-background-color;
 }
 
-@mixin email-header-title-style {
+@mixin shop-list-product-price-font-style {
     font-family: Roboto;
-    font-size: 48px;
+    font-size: 24px;
     font-weight: 700;
-    line-height: 56px;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+@mixin shop-list-product-sort-font-style {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+@mixin footer-post-date-font-style {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+@mixin footer-post-title-font-style {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+@mixin footer-post-comment-font-style {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
     letter-spacing: 0em;
     text-align: left;
 }

@@ -1,0 +1,43 @@
+main.content {
+    .woocommerce {
+        padding-left: 50px;
+        .woocommerce-order {
+            margin: 50px 60px;
+
+            .woocommerce-notice--success {
+                margin: 30px 0!important;
+                @include h2-common-font-style;
+                color: $primary-font-color;
+            }
+            
+            .woocommerce-order-overview {
+                li {
+                    @include h3-common-font-style;
+                }
+            }
+            p {
+                margin-bottom: 30px;
+                @include body-common-font-style;
+            }
+            .woocommerce-order-details {
+                width: 80%;
+            }
+        }
+    }
+
+
+    // .woocommerce-customer-details {
+    //     .woocommerce-columns.woocommerce-columns--2.woocommerce-columns--addresses.col2-set.addresses {
+    //         width: 80%;
+
+    //         .woocommerce-column {
+    //             width: 45%;
+    //             margin: 10px;
+
+    //             address {
+    //                 height: 100px;
+    //             }
+    //         }
+    //     }
+    // }
+}

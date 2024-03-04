@@ -31,9 +31,9 @@ do_action('woocommerce_before_main_content');
 
 ?>
 <header class="woocommerce-products-header">
-	<!-- <?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
+	<?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
 		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
-	<?php endif; ?> -->
+	<?php endif; ?>
 
 	<?php
 	/**
@@ -59,6 +59,10 @@ do_action('woocommerce_before_main_content');
 
 	<div class="custom-products-list">
 		<?php
+		// if (is_product_category()) {
+		echo '<h1 class="product-category-title">' . single_cat_title('', false) . '</h1>';
+		// }
+
 		if (woocommerce_product_loop()) {
 
 			/**
@@ -92,7 +96,7 @@ do_action('woocommerce_before_main_content');
 </div>
 
 <!-- Add "Load More Products" button -->
-<button id="load_more_products">Load More Products</button>
+<!-- <button id="load_more_products">Load More Products</button> -->
 
 <?php
 			/**

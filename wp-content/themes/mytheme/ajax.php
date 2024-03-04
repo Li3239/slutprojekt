@@ -12,8 +12,11 @@ function my_theme_enqueue_scripts()
     wp_enqueue_script("mytheme_lazy_load", get_template_directory_uri() . "/resources/js/lazyload.js", array("mytheme_jquery"), false, array());
 
     // 本地化脚本以包含 AJAX URL 和 nonce
+    //wp_localize_script 函数允许将服务器端的 PHP 数据安全地传递到前端的 JavaScript 文件中
     wp_localize_script('mytheme_lazy_load', 'ajax_params', array(
+        //将 WordPress 后端处理 AJAX 请求的 URL (admin-ajax.php) 传递给前端 JavaScript
         'ajax_url' => admin_url('admin-ajax.php'),
+        //创建了一个称为 nonce（数字签名）的安全令牌，并将其传递给前端，Nonce 用于验证请求的合法性，确保请求是从你的网站发起的，防止 CSRF 攻击。
         'nonce' => wp_create_nonce('mytheme_lazy_load_nonce') // create nonce
     ));
 }
