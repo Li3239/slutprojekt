@@ -24,7 +24,6 @@ function mytheme_getbyajax(searchwords) {
 
         }
     });
-
 }
 
 // call the function

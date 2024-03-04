@@ -5,7 +5,6 @@ footer {
     height: 495px;
     background-color: $footer-primary-background-color;
 
-    
     .container {
         display: flex;
         justify-content: space-between;
@@ -23,7 +22,8 @@ footer {
             padding-left: 50px;
 
             .footer-address-title {
-                @include footer-address-title-style;
+                @include h2-common-font-style;
+                color: $secondary-font-color;
             }
 
             .footer-address-info {
@@ -101,14 +101,16 @@ footer {
         }
 
         .column-shopping,
-        .column-links {
+        .column-links,
+        .column-post {
             width: 16%;
             height: auto;
 
             span.category {
                 display: block;
                 margin-bottom: 30px;
-                @include footer-shopping-links-title-style;
+                @include body-common-font-style;
+                color: $secondary-font-color;
             }
 
             ul {
@@ -126,69 +128,66 @@ footer {
             }
         }
 
+        .column-post {
+            display: flex;
+            flex-direction: column;
 
+            // 移除最后一个评论的底部边框
+            // .custom-latest-post:last-child {
+            //     border-bottom: none;
+            // }
 
-        // .column-newsletter {
-        //     width: 33%;
-        //     height: auto;
-        //     padding-left: 80px;
-        //     margin-left: 60px;
+            .custom-latest-post {
+                width: 100%;
+                height: 45%;
+                .post-date-day,
+                .post-date-month {
+                    display: inline-block;
+                    vertical-align: bottom;
+                }
 
-        //     span {
-        //         display: block;
-        //         // @include primary-font-commonStyles();
-        //         color: $secondary-font-color;
-        //         margin-bottom: 50px;
-        //     }
+                .post-date-day {
+                    @include footer-post-date-font-style;
+                    color: $secondary-font-color;
+                    margin-right: 10px;
+                }
 
-        //     .subscribe {
-        //         width: 400px;
+                .post-date-month {
+                    @include footer-post-comment-font-style;
+                    color: $secondary-font-color;
+                }
 
-        //         .subscribe-form {
-        //             display: flex;
-        //             align-items: center;
+                .post-article {
+                    list-style-type: none;
 
-        //             input[type="email"] {
-        //                 width: 50%;
-        //                 margin-right: 10px;
-        //                 border: none;
-        //                 border-bottom: 1px solid $primary-font-color;
-        //                 padding-bottom: 10px;
-        //                 font-family: Poppins;
-        //                 font-size: 14px;
-        //                 font-weight: 400;
-        //                 line-height: 21px;
-        //                 letter-spacing: 0em;
-        //                 text-align: left;
+                    // margin-bottom: 20px;
+                    a {
+                        display: flex;
+                        flex-wrap: wrap;
+                        max-width: 300px;
+                        text-decoration: none;
+                        @include footer-post-title-font-style;
+                        color: $secondary-font-color;
+                    }
+                }
 
-        //                 &:focus {
-        //                     outline: none;
-        //                 }
-        //             }
+                .post-comment-quantity {
+                    @include footer-post-comment-font-style;
+                    color: $secondary-font-color;
+                }
+            }
 
-        //             button {
-        //                 background: none;
-        //                 border: none;
-        //                 border-bottom: 1px solid $primary-font-color;
-        //                 padding-bottom: 10px;
-        //                 color: $primary-font-color;
-        //                 cursor: pointer;
-        //                 font-family: Poppins;
-        //                 font-size: 14px;
-        //                 font-weight: 500;
-        //                 line-height: 21px;
-        //                 letter-spacing: 0em;
-        //                 text-align: left;
-        //                 &:hover {
-        //                     color: darkblue; // 鼠标悬停时的颜色变化
-        //                     &:focus {
-        //                         outline: none;
-        //                     }
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
+            .footer-line {
+                width: 80%;
+                height: 1px;
+                text-align: center;
+                flex-shrink: 0;
+                background-color: $primary-background-color;
+                opacity: 0.1;
+                margin: 30px 0;
+            }
+        }
+
         .container-copyright {
             display: flex;
             flex-direction: column;
@@ -207,7 +206,16 @@ footer {
             .site-info {
                 width: 100%;
                 height: 58px;
-                margin: 20px 0 20px 0;
+                margin: auto;
+                font-family: Roboto;
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 16px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #FFFFFF;
+                // @include footer-shopping-links-style;
+                // color: $secondary-font-color;
             }
         }
     }

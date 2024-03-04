@@ -42,7 +42,50 @@
             wp_nav_menu($menu);
             ?>
         </div>
-        <div class="column-newsletter">
+
+        <div class="column-post">
+            <span class="category">FROM THE BLOG</span>
+            <?php
+            // 设置查询参数
+            $args = array(
+                'posts_per_page' => 2, // 限制显示的文章数量为2
+                'orderby' => 'date', // 根据日期排序
+                'order' => 'DESC', // 降序排列，确保最新的文章先显示
+            );
+            // 创建一个新的WP_Query实例
+            $latest_posts = new WP_Query($args);
+            if ($latest_posts->have_posts()) {
+                while ($latest_posts->have_posts()) {
+                    $comment_count = get_comments_number();
+                    echo '<div class="custom-latest-post">';
+                    echo '<div>';
+                    echo '  <p class="post-date-day">' . get_the_date('j') . '</p>';
+                    echo '  <p class="post-date-month">' . get_the_date('M') . '</p>';
+                    echo '</div>';
+                    // echo '  <p class="post-date-day">';
+                    // echo the_time('j');
+                    // echo '  </p>';
+                    echo '  <ul class="post-article">';
+                    $latest_posts->the_post(); // 迭代文章
+                    echo '    <li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
+                    echo '  </ul>';
+                    if ($comment_count > 0) {
+                        echo '  <p class="post-comment-quantity">' . $comment_count . ' Comments</p>';
+                    }
+                    echo '</div>';
+                    echo '<div class="footer-line"></div>';
+                }
+                // echo '</ul>';
+            } else {
+                // 没有找到文章
+                echo '<p>No post found.</p>';
+            }
+            // 重置查询数据
+            wp_reset_postdata();
+            ?>
+        </div>
+
+        <!-- <div class="column-newsletter">
             <span class="category">Newsletter</span>
             <div class="subscribe">
                 <form class="subscribe-form">
@@ -50,7 +93,7 @@
                     <button type="submit">SUBSCRIBE</button>
                 </form>
             </div>
-        </div>
+        </div> -->
     </section>
 
     <section class="container-copyright">
@@ -67,23 +110,10 @@
 
 <?php
 // submit form input
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // get email
-    $email = $_POST['email'];
-    // do something(check email, verify, save...)
-    echo ('Your inputed email is : ' . $email);
-}
-
-$recent_posts = wp_get_recent_posts(array(
-    'numberposts' => 2, // get newest 2 posts
-    'post_status' => 'publish' // should be published post
-));
-if (count($recent_posts) > 0) {
-    echo '<ul class="footer-blog-posts">';
-    foreach ($recent_posts as $post) {
-        echo '<li><a href="' . get_permalink($post["ID"]) . '">' . esc_attr($post["post_title"]) . '</a></li>';
-    }
-    echo '</ul>';
-}
-
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     // get email
+//     $email = $_POST['email'];
+//     // do something(check email, verify, save...)
+//     echo ('Your inputed email is : ' . $email);
+// }
 ?>

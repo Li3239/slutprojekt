@@ -1,23 +1,72 @@
+//-----------------------------------------------------------
+// 无 【Show more products】button 的lazyload
+//-----------------------------------------------------------
 jQuery(function($) {
-    var page = 2; // load from the 2nd page
-    $('body').on('click', '#load_more_products', function(e) {
-        e.preventDefault();
-        var button = $(this);
-        var data = {
-            'action': 'my_load_more_products',
-            'page': page,
-            'nonce': ajax_params.nonce // send nonce !!!! 解决这个问题的？POST http://slutprojekt.test/wp-admin/admin-ajax.php 400 (Bad Request)
-        };
-        $.post(ajax_params.ajax_url, data, function(response) {
-            if (response && response != 'No more products to load.') {
-                button.before(response);
-                page++;
-            } else {
-                button.text('No more products').prop('disabled', true);
-            }
-        });
+    var page = 2; // 从第二页开始加载
+    var loading = false; // 用来防止重复加载
+    var max_pages = 5; // 假设最多有5页内容，你可能需要根据实际情况调整
+
+    $(window).scroll(function() {
+        // 检查用户是否滚动到页面底部
+        if ($(window).scrollTop() + $(window).height() > $(document).height() - 100 && !loading && page <= max_pages) {
+            loading = true; // 防止在加载过程中重复请求
+
+            var data = {
+                //指定了AJAX请求的action参数为my_load_more_products。
+                //在ajax.php中需要 使用wp_ajax_（登录用户）和wp_ajax_nopriv_（未登录用户）钩子来挂载这个函数
+                'action': 'my_load_more_products', 
+                'page': page,
+                'nonce': ajax_params.nonce // 从 ajax.php 传递的（数字签名）的安全令牌
+            };
+
+            //ajax_params.ajax_url： ajax.php 中传递到 js 的参数，从而js 可以发送 AJAX 请求到 WordPress 后端
+            $.post(ajax_params.ajax_url, data, function(response) {
+                if (response && response != 'No more products to load.') {
+                    $('div.custom-products-list > ul.products.columns-4').append(response);
+                    page++;
+                    loading = false; // 加载完成后允许再次加载
+                } else {
+                    // 可选：如果没有更多产品加载，可以移除滚动监听或显示消息
+                    $(window).off('scroll');
+                    // 或者显示一条消息
+                    // $('div.custom-products-list').append('<p>No more products to load.</p>');
+                }
+            });
+        }
     });
 });
+
+//-----------------------------------------------------------
+// 使用 【Show more products】button
+// 1. 需要将以下代码添加到 archive-product.php
+// <!-- Add "Load More Products" button -->
+// <button id="load_more_products">Load More Products</button>
+//-----------------------------------------------------------
+// jQuery(function($) {
+//     var page = 2; // 从第二页开始加载
+//     $('body').on('click', '#load_more_products', function(e) {
+//         e.preventDefault();
+//         var button = $(this);
+//         var data = {
+//             'action': 'my_load_more_products',
+//             'page': page,
+//             'nonce': ajax_params.nonce // 确保你已经正确定义并传递了 nonce
+//         };
+//         $.post(ajax_params.ajax_url, data, function(response) {
+//             if (response && response != 'No more products to load.') {
+//                 // 这里指定了要插入内容的具体位置
+//                 $('div.custom-products-list > ul.products.columns-4').append(response);
+//                 page++;
+//             } else {
+//                 button.text('No more products').prop('disabled', true);
+//             }
+//         });
+//     });
+// });
+
+
+
+
 
 // jQuery(function($){
 //     var page = 2; // 开始从第二页加载，因为第一页默认已加载
