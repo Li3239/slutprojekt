@@ -12,7 +12,7 @@
  *
  * @see     https://woo.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 7.9.0
+ * @version 7.9.0wp-content/plugins/woocommerce/templates/cart/cart.php
  */
 
 defined( 'ABSPATH' ) || exit;

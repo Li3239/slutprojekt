@@ -42,7 +42,8 @@ function display_product_shortcode( $atts ) {
         'id'          => '',            // Default product ID
         'title'       => true,          // Whether to display the title (default: true)
         'price'       => true,          // Whether to display the price (default: true)
-        'description' => true,         // Whether to display the description (default: false)
+        'description' => true,          // Whether to display the description (default: false)
+        'image'       => true,          // Whether to display the image (default: true)
     ), $atts, 'product' );
 
     // Initialize output variable
@@ -72,6 +73,13 @@ function display_product_shortcode( $atts ) {
                 the_title( '<h2>', '</h2>' );
             }
 
+            // Display the image if attribute is set to true
+            if ( $atts['image'] ) {
+                echo '<div class="product-image">';
+                the_post_thumbnail(); // Display the product thumbnail
+                echo '</div>';
+            }
+
             // Display the price if attribute is set to true
             if ( $atts['price'] ) {
                 wc_get_template_part( 'content', 'single-product' );
@@ -96,4 +104,5 @@ function display_product_shortcode( $atts ) {
     // Return the output
     return $output;
 }
+
 add_shortcode( 'product', 'display_product_shortcode' );

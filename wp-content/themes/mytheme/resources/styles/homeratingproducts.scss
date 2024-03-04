@@ -1,0 +1,20 @@
+.wc-block-product {
+    display: flex;
+    align-items: center; // Align items vertically
+    margin-bottom: 20px; // Add margin between each product item
+    .product-details {
+        flex-grow: 1; // Allow the details to take up remaining space
+        .product-title {
+            margin-bottom: 0.5rem; // Adjust spacing as needed
+        }
+        .product-rating {
+            margin-bottom: 0.5rem; // Adjust spacing as needed
+        }
+        .product-price {
+            margin-bottom: 0.5rem; // Adjust spacing as needed
+        }
+    }
+    .product-image {
+        margin-left: 1rem; // Add space between image and details
+    }
+}
