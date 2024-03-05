@@ -191,3 +191,62 @@ function custom_display_product_variations_shortcode() {
 }
 
 
+
+
+
+// Add shortcode for the email subscription form
+function email_subscription_form_shortcode() {
+    // Output HTML for the form
+    $output = '<div class="right-content">';
+    $output .= '<form action="#" method="post">';
+    $output .= '<input type="email" name="email" placeholder="Enter your e-mail address" required>';
+    $output .= '<button type="submit"><img src="' . get_template_directory_uri() . '/resources/images/email.png" alt="Subscribe"></button>';
+    $output .= '</form>';
+    $output .= '</div>';
+
+    return $output;
+}
+add_shortcode('email_subscription_form', 'email_subscription_form_shortcode');
+
+
+
+// Function to display three products with specific IDs
+function display_products_shortcode() {
+    // Array of product IDs to display
+    $product_ids = array(231, 232, 233);
+
+    // Start output buffer
+    ob_start();
+
+    // Query the products
+    $args = array(
+        'post_type' => 'product',
+        'post_status' => 'publish',
+        'posts_per_page' => -1,
+        'post__in' => $product_ids,
+    );
+
+    $products_query = new WP_Query($args);
+
+    if ($products_query->have_posts()) {
+        // Start outputting the products
+        echo '<div class="product-columns">';
+        while ($products_query->have_posts()) {
+            $products_query->the_post();
+            // Display each product
+            wc_get_template_part('content', 'product');
+        }
+        echo '</div>';
+    } else {
+        echo '<p>No products found.</p>';
+    }
+
+    // Reset post data
+    wp_reset_postdata();
+
+    // End output buffer and return the content
+    return ob_get_clean();
+}
+
+// Register the shortcode
+add_shortcode('display_products', 'display_products_shortcode');
