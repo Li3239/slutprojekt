@@ -4,27 +4,7 @@
 
     <?php do_shortcode("shortcode_home_top_1"); ?>
 
-     <div class="home-section1">
 
-
-        <div class="home-top">
-            <img src="<?= get_template_directory_uri() . "/resources/images/delievery.svg"; ?>"
-                class="header-icon" />
-            <h2>FREE SHIPPING</h2>
-        </div>
-
-        <div class="home-top">
-            <img src="<?= get_template_directory_uri() . "/resources/images/moneyback.svg"; ?>"
-                class="header-icon" />
-            <h2>100% MONEY BACK</h2>
-        </div>
-
-        <div class="home-top">
-            <img src="<?= get_template_directory_uri() . "/resources/images/support.svg"; ?>"
-                class="header-icon" />
-            <h2>SUPPORT 24/7</h2>
-        </div>
-    </div> 
 
 
 
@@ -42,7 +22,10 @@
         <div class="subscribe">
             <form class="subscribe-form1">
                 <input type="email" placeholder="Enter your e-mail Address">
-                <button type="submit" class="email"><img src="resources/images/email.php" alt=""></button>
+                <button type="submit" class="email">
+                <img src="<?php echo get_template_directory_uri(); ?>/resources/images/homeemail.png" alt="">
+                </button>
+
             </form>
         </div>
 

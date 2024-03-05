@@ -5,9 +5,9 @@ if (!defined('ABSPATH')) {
 }
 
 require_once(get_template_directory() . "/init.php");
-//test
+
 /**
- * support Woocommerce function
+ * Add WooCommerce support
  */
 function mytheme_add_woocommerce_support()
 {
@@ -15,7 +15,9 @@ function mytheme_add_woocommerce_support()
 }
 add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
 
-//this function will create a location in the wordpress dashbord
+/**
+ * Register menus
+ */
 function theme_register_menus()
 {
     register_nav_menus(
@@ -27,108 +29,83 @@ function theme_register_menus()
             'aboutUs-menu' => __('AboutUs Menu', 'theme-text-domain'),
             'news-menu' => __('News Menu', 'theme-text-domain'),
             'contactUs-menu' => __('ContactUs Menu', 'theme-text-domain')
-
-
-        ));
+        )
+    );
 }
 add_action('after_setup_theme', 'theme_register_menus');
 
-
-
-
-
-// Define a custom shortcode to display products with specific attributes
+/**
+ * Custom shortcode to display products with specific attributes
+ */
 function display_product_shortcode($atts)
 {
-    // Shortcode attributes
     $atts = shortcode_atts(
         array(
-            'id' => '',            // Default product ID
-            'title' => true,          // Whether to display the title (default: true)
-            'price' => true,          // Whether to display the price (default: true)
-            'description' => true,          // Whether to display the description (default: false)
-            'image' => true,          // Whether to display the image (default: true)
-        ), $atts, 'product');
-
-    // Initialize output variable
-    $output = '';
-
-    // Product query arguments
-    $args = array(
-        'p' => $atts['id'], // Product ID
-        'post_type' => 'product',   // WooCommerce product post type
-        'posts_per_page' => 1,           // Display only one product
+            'id' => '',
+            'title' => true,
+            'price' => true,
+            'description' => true,
+            'image' => true,
+        ),
+        $atts,
+        'product'
     );
 
-    // Product query
+    $output = '';
+
+    $args = array(
+        'p' => $atts['id'],
+        'post_type' => 'product',
+        'posts_per_page' => 1,
+    );
+
     $products = new WP_Query($args);
 
-    // Check if products were found
     if ($products->have_posts()) {
-        // Start the output buffer
         ob_start();
 
-        // Loop through products
         while ($products->have_posts()) {
             $products->the_post();
 
-            // Display the title if attribute is set to true
             if ($atts['title']) {
                 the_title('<h2>', '</h2>');
             }
 
-            // Display the image if attribute is set to true
             if ($atts['image']) {
                 echo '<div class="product-image">';
-                the_post_thumbnail(); // Display the product thumbnail
+                the_post_thumbnail();
                 echo '</div>';
             }
 
-            // Display the price if attribute is set to true
             if ($atts['price']) {
                 wc_get_template_part('content', 'single-product');
             }
 
-            // Display the description if attribute is set to true
             if ($atts['description']) {
                 the_content();
             }
         }
 
-        // Get and clean the output buffer
         $output = ob_get_clean();
 
-        // Reset post data
         wp_reset_postdata();
     } else {
-        // No products found
         $output = '<p>No product found</p>';
     }
 
-    // Return the output
     return $output;
 }
-
 add_shortcode('product', 'display_product_shortcode');
 
-
-
-
-
-
-// Step 1: Create a function to retrieve and display products
+/**
+ * Display products by IDs
+ */
 function display_products_by_ids()
 {
-
-
-
-    // Array of product IDs to display
     $product_ids = array(231, 232, 233);
 
-    // Start output buffer
     ob_start();
 
-    // Query the products
     $args = array(
         'post_type' => 'product',
         'post_status' => 'publish',
@@ -139,11 +116,9 @@ function display_products_by_ids()
     $products_query = new WP_Query($args);
 
     if ($products_query->have_posts()) {
-        // Start outputting the products
         echo '<div class="product-columns">';
         while ($products_query->have_posts()) {
             $products_query->the_post();
-            // Display each product
             wc_get_template_part('content', 'product');
         }
         echo '</div>';
@@ -151,32 +126,20 @@ function display_products_by_ids()
         echo '<p>No products found.</p>';
     }
 
-    // Reset post data
     wp_reset_postdata();
 
-    // End output buffer and return the content
     return ob_get_clean();
 }
-
-// Step 2: Register the shortcode
 add_shortcode('display_products', 'display_products_by_ids');
 
-
-
-
-
-
-
-// Step 1: Create a function to retrieve and display products with ratings
-// Step 1: Create a function to retrieve and display products with ratings and images
+/**
+ * Display products with ratings and images
+ */
 function display_rating_products_with_images() {
-    // Array of product IDs to display
     $product_ids = array(231, 232, 233);
 
-    // Start output buffer
     ob_start();
 
-    // Query the products
     $args = array(
         'post_type'      => 'product',
         'post_status'    => 'publish',
@@ -187,11 +150,9 @@ function display_rating_products_with_images() {
     $products_query = new WP_Query($args);
 
     if ($products_query->have_posts()) {
-        // Start outputting the products
         echo '<div class="product-columns">';
         while ($products_query->have_posts()) {
             $products_query->the_post();
-            // Display each product with its thumbnail, title, and stars rating
             echo '<div class="product">';
             echo '<div class="product-thumbnail">';
             woocommerce_template_loop_product_thumbnail();
@@ -209,25 +170,24 @@ function display_rating_products_with_images() {
         echo '<p>No products found.</p>';
     }
 
-    // Reset post data
     wp_reset_postdata();
 
-    // End output buffer and return the content
     return ob_get_clean();
 }
-
-// Step 2: Register the shortcode
 add_shortcode('all_product_stars_with_images', 'display_rating_products_with_images');
 
-
-
-
-// Add shortcode
+/**
+ * Add shortcode
+ */
 add_shortcode( 'display_product_variations', 'custom_display_product_variations_shortcode' );
 
-// Shortcode callback function
+/**
+ * Shortcode callback function
+ */
 function custom_display_product_variations_shortcode() {
     ob_start(); // Start output buffering
     custom_display_product_variations(); // Call your existing function
     return ob_get_clean(); // Return the buffered content
 }
+
+

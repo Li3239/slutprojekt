@@ -1,33 +1,4 @@
 <?php
-/**
- * Single Product tabs
- *
- * This template can be overridden by copying it to yourtheme/woocommerce/single-product/tabs/tabs.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see     https://woo.com/document/template-structure/
- * @package WooCommerce\Templates
- * @version 3.8.0
- */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
-
-/**
- * Filter tabs and allow third parties to add their own.
- *
- * Each tab is an array containing title, callback and priority.
- *
- * @see woocommerce_default_product_tabs()
- */
-$product_tabs = apply_filters( 'woocommerce_product_tabs', array() );
-
 if ( ! empty( $product_tabs ) ) : ?>
 <div class="woocommerce-tabs wc-tabs-wrapper">
     <ul class="tabs wc-tabs" role="tablist">
@@ -45,8 +16,22 @@ if ( ! empty( $product_tabs ) ) : ?>
             if ( isset( $product_tab['callback'] ) ) {
                 call_user_func( $product_tab['callback'], $key, $product_tab );
 
-                // Display product image
+                // Display product title
+                echo '<div class="product-details">';
+                echo '<h2>' . get_the_title() . '</h2>';
+
+                // Display product price
                 global $product;
+                echo '<div class="product-price">';
+                echo '<p>' . $product->get_price_html() . '</p>';
+                echo '</div>';
+
+                // Display product color
+                echo '<div class="product-color">';
+                echo '<p>' . esc_html__( 'Color:', 'your-textdomain' ) . ' ' . $product->get_attribute( 'color' ) . '</p>';
+                echo '</div>';
+
+                // Display product image
                 echo '<div class="product-image">';
                 echo '<p>' . $product->get_image() . '</p>';
                 echo '</div>';
@@ -55,6 +40,13 @@ if ( ! empty( $product_tabs ) ) : ?>
                 echo '<div class="stock-status">';
                 echo '<p>' . esc_html__( 'Stock Status:', 'your-textdomain' ) . ' ' . $product->get_stock_status() . '</p>';
                 echo '</div>';
+
+                // Display product size
+                echo '<div class="product-size">';
+                echo '<p>' . esc_html__( 'Size:', 'your-textdomain' ) . ' ' . $product->get_attribute( 'size' ) . '</p>';
+                echo '</div>';
+
+                echo '</div>'; // Close product-details div
             }
             ?>
         </div>
@@ -62,6 +54,4 @@ if ( ! empty( $product_tabs ) ) : ?>
 
     <?php do_action( 'woocommerce_product_after_tabs' ); ?>
 </div>
-
-
 <?php endif; ?>
