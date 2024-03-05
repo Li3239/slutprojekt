@@ -1,85 +1,115 @@
-.email-content {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    max-width: 900px;
-    height: 800px;
-    margin: auto;
+//--------------------------------------
+// 为使用， 所有的css 都在email.html中实现
+// 因为 woocommerce 发送邮件服务不支持外部css
+// 必须提供完整的css，内连样式
+//--------------------------------------
+// .email-content {
+//     display: flex;
+//     flex-direction: column;
+//     width: 80%;
+//     max-width: 900px;
+//     height: 800px;
+//     margin: auto;
 
-    .email-header-title {
-        width: 100%;
-        height: 50px;
-        background-color: purple;
-        text-align: center;
-        margin-bottom: 20px;
+//     .email-header-title {
+//         width: 100%;
+//         height: 50px;
+//         background-color: purple;
+//         text-align: center;
+//         margin-bottom: 20px;
 
-        p {
-            font-family: Roboto;
-            font-size: 48px;
-            font-weight: 700;
-            line-height: 56px;
-            letter-spacing: 0em;
-            text-align: left;
-            color: #FFFFFF;
-        }
-    }
+//         p {
+//             font-family: Roboto;
+//             font-size: 48px;
+//             font-weight: 700;
+//             line-height: 56px;
+//             letter-spacing: 0em;
+//             text-align: left;
+//             color: #FFFFFF;
+//         }
+//     }
 
-    .email-order-inner {
-        margin-bottom: 20px;
+//     .email-order-inner {
+//         margin-bottom: 20px;
 
-        .customer-name {
-            font-weight: bold;
-            display: block;
-        }
+//         .customer-name {
+//             font-weight: bold;
+//             display: block;
+//         }
 
-        .order-summary-info,
-        .order-payment-info {
-            display: block;
-            margin-bottom: 10px;
-        }
+//         .order-summary-info,
+//         .order-payment-info {
+//             display: block;
+//             margin-bottom: 10px;
+//         }
 
-        #order-title {
-            font-size: 20px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-    }
+//         #order-title {
+//             font-size: 20px;
+//             margin-top: 20px;
+//             margin-bottom: 20px;
+//         }
+//     }
 
-    .email-order-detail {
-        table {
-            width: 100%;
-            border-collapse: collapse;
+//     .email-order-detail {
+//         table {
+//             width: 100%;
+//             border-collapse: collapse;
 
-            th,
-            td {
-                border: 1px solid #ddd;
-                padding: 8px;
-                text-align: left;
-            }
+//             th,
+//             td {
+//                 border: 1px solid #ddd;
+//                 padding: 8px;
+//                 text-align: left;
+//             }
 
-            th {
-                background-color: #f9f9f9;
-            }
-        }
-    }
+//             th {
+//                 background-color: #f9f9f9;
+//             }
+//         }
+//     }
 
-    .email-shipping-billing {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 40px;
+//     .email-shipping-billing {
+//         display: flex;
+//         justify-content: space-between;
+//         margin-top: 40px;
 
-        .email-billing {
-            width: 48%;
+//         .email-billing {
+//             width: 48%;
 
-            h2 {
-                margin-bottom: 10px;
-            }
+//             h2 {
+//                 margin-bottom: 10px;
+//             }
 
-            .address {
-                p {
-                    margin: 0 0 10px;
-                }
-            }
-        }
-    }
-}
+//             .address {
+//                 p {
+//                     margin: 0 0 10px;
+//                 }
+//             }
+//         }
+//     }
+
+//     /* 包裹所有相关产品的div容器的样式 */
+//     .related-container {
+//         display: flex;
+//         flex-wrap: nowrap;
+//         justify-content: space-around;
+//         align-items: center;
+
+//         .related-product {
+//             flex: 1;
+//             max-width: 25%;
+//             a {
+//                 display: block;
+//                 text-align: center;
+
+//                 img {
+//                     max-width: 100%;
+//                     height: auto;
+//                 }
+//             }
+//         }
+//     }
+
+
+
+// }

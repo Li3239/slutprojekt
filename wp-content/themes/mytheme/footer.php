@@ -48,6 +48,7 @@
             <?php
             // 设置查询参数
             $args = array(
+                'post_type' => 'post', // 查询文章类型为 "post"
                 'posts_per_page' => 2, // 限制显示的文章数量为2
                 'orderby' => 'date', // 根据日期排序
                 'order' => 'DESC', // 降序排列，确保最新的文章先显示
@@ -56,17 +57,17 @@
             $latest_posts = new WP_Query($args);
             if ($latest_posts->have_posts()) {
                 while ($latest_posts->have_posts()) {
+                    // the_post()：获取全局$post对象为当前循环文章
+                    $latest_posts->the_post(); 
+
+                    // 输出文章的内容
                     $comment_count = get_comments_number();
                     echo '<div class="custom-latest-post">';
                     echo '<div>';
                     echo '  <p class="post-date-day">' . get_the_date('j') . '</p>';
                     echo '  <p class="post-date-month">' . get_the_date('M') . '</p>';
                     echo '</div>';
-                    // echo '  <p class="post-date-day">';
-                    // echo the_time('j');
-                    // echo '  </p>';
                     echo '  <ul class="post-article">';
-                    $latest_posts->the_post(); // 迭代文章
                     echo '    <li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
                     echo '  </ul>';
                     if ($comment_count > 0) {
@@ -75,7 +76,6 @@
                     echo '</div>';
                     echo '<div class="footer-line"></div>';
                 }
-                // echo '</ul>';
             } else {
                 // 没有找到文章
                 echo '<p>No post found.</p>';

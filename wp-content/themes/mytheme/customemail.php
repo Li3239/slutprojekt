@@ -75,20 +75,26 @@ function my_custom_thank_you_email($order_id)
             break;
         }
         $related_products_html .= '<div class="related-product">';
-        $related_products_html .= '<a href="' . $product['link'] . '">';
-        $related_products_html .= '<img src="' . $product['image'] . '" alt="' . $product['title'] . '">';
-        $related_products_html .= '</a>';
-        $related_products_html .= '<h3>' . $product['title'] . '</h3>';
+        $related_products_html .= '  <a href="' . $product['link'] . '">';
+        $related_products_html .=       $product['image']; // $product['image']包含了整个<img>标签所需内容
+        $related_products_html .= '  </a>';
+        $related_products_html .= '  <h3>' . $product['title'] . '</h3>';
         $related_products_html .= '</div>';
         $related_product_count++;
     }
+    // error_log("Send email !!!!!!!! html : " . $related_products_html);
 
-    // Insert related products HTML into template
+    // array_merge: 合并一个或多个数组
+    // strtr()：是一个PHP内置函数，用于字符串替换
+    // 第一个参数是要进行替换的原字符串（即来自email.html 的 $template）。
+    // 第二个参数是一个数组，指明了要替换的占位符及其对应的替换值（即 数组$replacements）
+    // 将 $template 中的 占位符用 $replacements 中相应的值替换
     $template = strtr($template, array_merge($replacements, array('{{related_products}}' => $related_products_html)));
-
+    
     // Send email
     $customer_email = $order->get_billing_email();
     $headers = array('Content-Type: text/html; charset=UTF-8');
+    // 邮件发送时所有的信息必须全部打包好，不支持外部的css等设定
     wp_mail($customer_email, 'Your Order Confirmation', $template, $headers);
 }
 add_action('woocommerce_order_status_completed', 'my_custom_thank_you_email');

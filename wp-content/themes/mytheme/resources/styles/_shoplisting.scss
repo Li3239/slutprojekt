@@ -1,0 +1,454 @@
+main {
+    .woocommerce-breadcrumb {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 30px 0;
+        @include shop-hero-info-font-style;
+        color: $primary-text-color;
+    }
+
+    .woocommerce-products-header {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+        .term-description {
+            display: none;
+        }
+    }
+
+    .custom-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 50px;
+
+        .custom-sidebar {
+            flex: 1;
+            align-items: start;
+            margin: 0 50px;
+
+            .wpfFilterContent {
+                .wpfCheckboxHier {
+                    ul.wpfFilterVerScroll {
+                        li {
+                            margin-bottom: 10px !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .custom-products-list {
+            flex: 3;
+            position: relative;
+
+            .product-category-title {
+                padding-left: 10px;
+            }
+
+            .current-category-description {
+                padding-left: 10px;
+                margin: 20px 0;
+            }
+
+            .woocommerce-breadcrumb {
+                padding-left: 10px;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+
+            .woocommerce-result-count {
+                display: none;
+            }
+
+            // category name
+            .current-category-name {
+                display: none;
+            }
+
+            .product-category-title {
+                @include product-category-page-category-name-style;
+                color: $primary-text-color;
+                margin-bottom: 30px;
+            }
+
+            .current-category-description {
+                font-family: Roboto;
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 21px;
+                letter-spacing: 0em;
+                text-align: left;
+            }
+            .sort-button {
+                cursor: pointer;
+                background-image: url('../images/sorting.png');
+                background-repeat: no-repeat;
+                background-size: 20px 12px; // 根据图标大小调整
+                background-position: left center; // 图标位置
+                padding-left: 30px;
+                margin-left: 10px;
+                @include shop-list-product-sort-font-style;
+            }
+
+            #selected-sort {
+                display: inline-block;
+                margin-left: 10px;
+            }
+
+            .sorting-options {
+                display: none; // 初始不显示，通过 JavaScript 控制显示
+                // position: absolute;
+                cursor: pointer;
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                z-index: 1000;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+                a {
+                    display: block;
+                    padding: 10px;
+                    color: #333;
+                    text-decoration: none;
+
+                    &:hover {
+                        background-color: #f7f7f7;
+                    }
+                }
+            }
+
+            ul.products {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0;
+                width: calc(100% - 10px);
+                list-style: none;
+                margin-left: -5px;
+
+                // single product
+                li.product {
+                    // width: calc(33.3% - 10px);
+                    width: 306px;
+                    height: auto;
+                    margin: 20px;
+                    position: relative;
+
+                    a.woocommerce-LoopProduct-link {
+                        position: relative;
+                        display: block;
+                        text-decoration: none;
+
+                        //product image
+                        .image-frame {
+                            .onsale {
+                                position: absolute;
+                                left: 10px;
+                                top: 10px;
+                                background-color: red;
+                                color: white;
+                                padding: 10px 20px;
+                                font-weight: bold;
+                                border-radius: 5px;
+                            }
+
+                            .onsale::after {
+                                content: '';
+                                position: absolute;
+                                bottom: -18px;
+                                left: 20px;
+                                border-width: 10px;
+                                border-style: solid;
+                                // top, right, bottom, left
+                                border-color: red transparent transparent transparent;
+                            }
+
+                            .new {
+                                position: absolute;
+                                right: 10px;
+                                top: 10px;
+                                background-color: green;
+                                color: white;
+                                padding: 10px 20px;
+                                font-weight: bold;
+                                border-radius: 5px;
+                            }
+
+                            .new::after {
+                                content: '';
+                                position: absolute;
+                                bottom: -18px;
+                                left: 20px;
+                                border-width: 10px;
+                                border-style: solid;
+                                // top, right, bottom, left
+                                border-color: green transparent transparent transparent;
+                            }
+
+                            //在产品图片下方显示 新商品 标签
+                            // .new {
+                            //     padding: 8px 12px;
+                            //     background-color: white;
+                            //     position: absolute;
+                            //     border: 1px solid #777;
+                            //     right: 10px;
+                            //     bottom: 10px;
+                            // }
+                        }
+
+                        // product title
+                        .woocommerce-loop-product__title {
+                            margin: 10px 0 !important;
+                            @include h3-common-font-style;
+                            color: $primary-text-color;
+                        }
+
+                        // percent off: 20%
+                        .percent-off {
+                            background: red;
+                            color: white;
+                            padding: 8px 12px;
+                            border-radius: 4px;
+                            font-weight: bold;
+                            position: absolute;
+                            right: 10px;
+                            margin-top: -80px;
+                        }
+
+                        .percent-off::after {
+                            content: '';
+                            position: absolute;
+                            top: 0px;
+                            left: -33px;
+                            border-width: 17px;
+                            border-style: solid;
+                            // top, right, bottom, left
+                            border-color: transparent red transparent transparent;
+                        }
+
+                        // .percent-off::after {
+                        //     content: '';
+                        //     position: absolute;
+                        //     top: -18px;
+                        //     left: 20px;
+                        //     border-width: 10px;
+                        //     border-style: solid;
+                        //     // top, right, bottom, left
+                        //     border-color: transparent transparent red transparent;
+                        // }
+                        // price
+                        .price {
+                            display: flex;
+                            width: 100%;
+                            height: auto;
+
+                            .woocommerce-Price-amount.amount {
+                                display: flex;
+                                margin-left: 0;
+                                @include shop-list-product-price-font-style;
+                                color: $primary-text-color;
+                            }
+                        }
+
+                        //review rating
+                        // .rating {
+                        //     height: 24px;
+                        //     width: calc(24px * 5);
+                        //     background-image: url("../images/star_unfilled.png");
+                        //     background-size: auto 100%;
+                        //     background-position: center center;
+                        //     background-repeat: repeat-x;
+
+                        //     .fill {
+                        //         width: 0%;
+                        //         height: 100%;
+                        //         background-image: url("../images/star_filled.png");
+                        //         background-size: auto 100%;
+                        //         background-repeat: repeat-x;
+                        //         background-position: center center;
+                        //     }
+                        // }
+                    }
+
+                    //----------------------------
+                    // addtocart，Like 处理
+                    //----------------------------
+                    //当鼠标悬停在 li.product 上时，.hover-buttons 元素会显示出来（默认状态不显示）
+                    &:hover .hover-buttons {
+                        display: flex; // 当鼠标悬停在产品上时显示
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+
+                    .hover-buttons {
+                        display: none;
+                        justify-content: center; // 水平居中对齐子元素
+                        align-items: center; // 垂直居中对齐子元素
+                        position: absolute;
+                        width: 55%;
+                        height: 10%;
+                        border-radius: 30px;
+                        background-color: #f2f2f2; // 替换为实际的背景颜色
+                        box-shadow: 0px 0px 5px 0px #0000001A;
+                        top: 40%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        padding: 10px 20px;
+                    }
+
+                    .button {
+                        background: none;
+                        border: none;
+                        cursor: pointer;
+                        color: #333;
+                        position: relative;
+                        display: flex; // 使按钮内部的伪元素和文本垂直居中
+                        align-items: center;
+                        justify-content: center;
+                        flex: 1; // 让所有按钮平均分配空间
+
+                        &::after {
+                            content: "";
+                            display: inline-block;
+                            width: 18px; // 图标的宽度
+                            height: 18px;
+                            background-size: cover;
+                            background-position: center;
+                        }
+                    }
+
+                    .add_to_cart_button::after {
+                        background-image: url("../images/addtocart.png");
+                    }
+
+                    .like_button {
+                        &::after {
+                            background-image: url("../images/like.png");
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 基础星星样式 */
+.star-rating {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    // color: #a9a9a9 !important;
+    display: inline-block;
+    line-height: 0;
+    width: 6em;
+
+    span {
+        color: $star-rating-full-color !important;
+        display: inline-block;
+        font-size: 1rem;
+        /* 或其他尺寸 */
+        line-height: 1;
+        /* 确保和font-size一致 */
+    }
+
+    /* 满星样式 */
+    .full-star {
+        display: inline-block;
+        color: $star-rating-full-color;
+    }
+
+    .half-star {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        display: inline-block;
+        width: 1em;
+    }
+
+    // .half-star::before {
+    //     content: "\f005";
+    //     // Font Awesome 实心星星图标
+    //     font-family: "Font Awesome 5 Free";
+    //     // content: "\f089";
+    //     position: absolute;
+    //     left: 0;
+    //     top: 0;
+    //     // 只覆盖半个星星
+    //     // width: 10%;
+    //     overflow: hidden;
+    //     color: $star-rating-full-color;
+    //     font-weight: 900;
+    // }
+    .half-star-font-awesome {
+        display: inline-block;
+        vertical-align: top;
+        font-family: 'Font Awesome 5 Free';
+        position: absolute;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+        color: $star-rating-full-color;
+        font-weight: 900;
+    }
+
+    // 半星样式 - 通过添加半星图标和改变颜色实现
+    // .half-star::after {
+    //     font-weight: 900;
+    //     // Font Awesome 半星图标的代码
+    //     content: "\f089";
+    //     position: absolute;
+    //     color: $star-rating-empty-color;
+    //     border: none;
+    //     // 调整位置覆盖灰色星星
+    //     margin-left: -1em;
+    // }
+
+    // 空星样式
+    .empty-star {
+        color: $star-rating-empty-color !important;
+    }
+}
+
+// .star-rating {
+//     font-family: 'Font Awesome 5 Free';
+//     font-weight: 900;
+//     color: #a9a9a9 !important;
+//     display: inline-block;
+//     span {
+//         color: $star-rating-full-color !important;
+//     }
+
+//     /* 满星样式 */
+//     .full-star {
+//         color: $star-rating-full-color;
+//     }
+
+//     .half-star {
+//         color: $star-rating-full-color;
+//     }
+//     // 半星样式 - 通过添加半星图标和改变颜色实现
+//     .half-star::after {
+//         font-weight: 900;
+//         // Font Awesome 半星图标的代码
+//         content: "\f089";
+//         position: absolute;
+//         color: $star-rating-full-color;
+//         border: none;
+//         /* 调整位置覆盖灰色星星 */
+//         margin-left: -1em;
+//     }
+
+//     // 空星样式
+//     .empty-star {
+//         color: $star-rating-empty-color !important;
+//     }
+// }
+
+//-----------------------------
+// 为了实现 home 页面的评分显示效果
+//-----------------------------
+.wc-block-grid__product .wc-block-grid__product-rating .star-rating span:before {
+    color: $star-rating-full-color;
+}

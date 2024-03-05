@@ -1,13 +1,14 @@
 body {
     main.content {
         .woocommerce {
-            // display: flex;
-            // justify-content: center;
+            display: flex;
+                flex-direction: column;
+                justify-content: center;
             margin: 80px 50px;
 
             .woocommerce-form-coupon-toggle,
             form.woocommerce-checkout {
-                width: 80%;
+                width: 100%;
                 margin: auto;
             }
 
@@ -38,7 +39,9 @@ body {
                                 @include body-common-font-style;
                             }
                         }
-
+                        #billing_address_1_field {
+                            margin-bottom: 30px;
+                        }
                     }
 
                     .col-1,
@@ -52,8 +55,6 @@ body {
                                 width: 211px;
                                 height: 50px;
                                 padding-left: 10px;
-                                // top: 650px;
-                                // left: 176px;
                                 border-radius: 10px;
                                 border: 1px solid #9F9F9F
                             }
@@ -66,7 +67,6 @@ body {
                         display: none;
                     }
                 }
-
                 // your orders & checkout method selection
                 .custom-order-and-checkout {
                     width: 40%;
@@ -77,16 +77,24 @@ body {
                     position: inherit !important;
 
                     b {
-                        left: 34% !important;
+                        left: 26% !important;
                     }
                 }
             }
         }
-
     }
 
     // Country / Region 下拉菜单设定
     .select2-dropdown--below {
         width: 212px !important;
+    }
+}
+
+// ----------------------
+// checkout klarna 页面
+// ----------------------
+form.checkout.woocommerce-checkout.kco-checkout {
+    #kco-wrapper {
+        width: 100% !important;
     }
 }

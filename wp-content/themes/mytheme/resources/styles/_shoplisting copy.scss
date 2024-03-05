@@ -1,0 +1,223 @@
+main {
+    .woocommerce-breadcrumb {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 30px 0;
+        @include shop-hero-info-font-style;
+        color: $primary-text-color;
+    }
+
+    .woocommerce-products-header {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+        .term-description {
+            display: none;
+        }
+    }
+
+    .custom-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 50px;
+
+        .custom-sidebar {
+            flex: 1;
+            align-items: start;
+            margin: 0 50px;
+
+            .wpfFilterContent {
+                .wpfCheckboxHier {
+                    ul.wpfFilterVerScroll {
+                        li {
+                            margin-bottom: 10px !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .custom-products-list {
+            flex: 3;
+            position: relative;
+
+            .product-category-title {
+                padding-left: 10px;
+            }
+            .current-category-description {
+                padding-left: 10px;
+                margin: 20px 0;
+            }
+
+            .woocommerce-breadcrumb {
+                padding-left: 10px;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+
+            .woocommerce-result-count {
+                display: none;
+            }
+
+            .sort-button {
+                cursor: pointer;
+                background-image: url('../images/sorting.png');
+                background-repeat: no-repeat;
+                background-size: 20px 12px; // 根据图标大小调整
+                background-position: left center; // 图标位置
+                padding-left: 30px;
+                margin-left: 10px;
+                @include shop-list-product-sort-font-style;
+            }
+
+            #selected-sort {
+                display: inline-block;
+                margin-left: 10px;
+            }
+
+            .sorting-options {
+                display: none; // 初始不显示，通过 JavaScript 控制显示
+                // position: absolute;
+                cursor: pointer;
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                z-index: 1000;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+                a {
+                    display: block;
+                    padding: 10px;
+                    color: #333;
+                    text-decoration: none;
+
+                    &:hover {
+                        background-color: #f7f7f7;
+                    }
+                }
+            }
+
+            ul.products {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0;
+                width: calc(100% - 10px);
+                list-style: none;
+                margin-left: -5px;
+
+                // single product
+                li.product {
+                    // width: calc(33.3% - 10px);
+                    width: 306px;
+                    height: auto;
+                    margin: 20px;
+                    position: relative;
+
+                    .woocommerce-LoopProduct-link {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+                        text-decoration: none; // 移除下划线
+
+                        // product title
+                        .woocommerce-loop-product__title {
+                            @include h3-common-font-style;
+                            color: $primary-text-color;
+                        }
+                        //review rating
+                        .rating {
+                            height: 24px;
+                            width: calc(24px * 5);
+                            background-image: url("../images/star_unfilled.png");
+                            background-size: auto 100%;
+                            background-position: center center;
+                            background-repeat: repeat-x;
+            
+                            .fill {
+                                width: 0%;
+                                height: 100%;
+                                background-image: url("../images/star_filled.png");
+                                background-size: auto 100%;
+                                background-repeat: repeat-x;
+                                background-position: center center;
+                            }
+                        }
+                    }
+                    .price {
+                        display: flex;
+                        width: 100%;
+                        height: auto;
+
+                        .woocommerce-Price-amount.amount {
+                            display: flex;
+                            margin-left: 0;
+                            @include shop-list-product-price-font-style;
+                            color: $primary-text-color;
+                        }
+                    }
+
+                    //----------------------------
+                    // addtocart，Like 处理
+                    //----------------------------
+                    //当鼠标悬停在 li.product 上时，.hover-buttons 元素会显示出来（默认状态不显示）
+                    &:hover .hover-buttons {
+                        display: flex; // 当鼠标悬停在产品上时显示
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+
+                    .hover-buttons {
+                        display: none;
+                        justify-content: center; // 水平居中对齐子元素
+                        align-items: center; // 垂直居中对齐子元素
+                        position: absolute;
+                        width: 55%;
+                        height: 10%;
+                        border-radius: 30px;
+                        background-color: #f2f2f2; // 替换为实际的背景颜色
+                        box-shadow: 0px 0px 5px 0px #0000001A;
+                        top: 40%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        padding: 10px 20px;
+                    }
+
+                    .button {
+                        background: none;
+                        border: none;
+                        cursor: pointer;
+                        color: #333;
+                        position: relative;
+                        display: flex; // 使按钮内部的伪元素和文本垂直居中
+                        align-items: center;
+                        justify-content: center;
+                        flex: 1; // 让所有按钮平均分配空间
+
+                        &::after {
+                            content: "";
+                            display: inline-block;
+                            width: 18px; // 图标的宽度
+                            height: 18px;
+                            background-size: cover;
+                            background-position: center;
+                        }
+                    }
+
+                    .add_to_cart_button::after {
+                        background-image: url("../images/addtocart.png");
+                    }
+
+                    .like_button {
+                        &::after {
+                            background-image: url("../images/like.png");
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

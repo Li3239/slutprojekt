@@ -95,13 +95,13 @@
         .email-content .email-shipping-billing .email-billing .address p {
             margin: 0 0 10px;
         }
-        .related-products {
+
+        /* .related-container {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
         }
         .related-products .related-product {
-            /* 每个产品占据父容器的四分之一，并留有一定的间距 */
             width: calc(25% - 10px);
             max-width: 100px;
             height: auto;
@@ -122,6 +122,30 @@
                 letter-spacing: 0em;
                 text-align: left;
             }
+        } */
+
+
+        .related-container {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            /* align-items: center; */
+        }
+
+        .related-container .related-product {
+            flex: 1;
+            max-width: 25%;
+            margin-right: 10px;
+        }
+
+        .related-container .related-product a {
+            display: block;
+            text-align: center;
+        }
+
+        .related-container .related-product a img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
     <div class="email-content">
@@ -137,7 +161,7 @@
             <span class="order-payment-info">Pay with {{payment_method_title}}.</span>
             <h2 class="order-title">[Order #{{order_id}}] ({{date_paid}})</h2>
         </div>
-    
+
         <div class="email-order-detail">
             <table>
                 <!-- title -->
@@ -189,7 +213,7 @@
                 </tfoot>
             </table>
         </div>
-    
+
         <div class="email-shipping-billing">
             <div class="email-billing">
                 <h2>Billing address</h2>
@@ -210,85 +234,45 @@
                 </div> -->
             <p style="margin: 0 0 16px;">Thanks for using slutprojekt.test!</p>
         </div>
-        <div class="related-products">
+        <div class="related-container">
             {{related_products}}
         </div>
     </div>
 
 
-    <!-- <a href="#" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-        <img width="300" height="300" src="" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail">
-        <h2 class="woocommerce-loop-product__title">4-pack Small Ceramic Plates</h2>
-        <span class="price">
-            <span class="woocommerce-Price-amount amount"><bdi>30.00&nbsp;<span class="woocommerce-Price-currencySymbol">kr</span></bdi></span>
-        </span>
-    </a> -->
-
-
-    <!-- <div class="custom-products-list">
-        <h1 class="product-category-title"></h1>
-        <div class="woocommerce-notices-wrapper"></div>
-        <p class="woocommerce-result-count">
-            Showing 1–16 of 19 results</p>
-        <form class="woocommerce-ordering" method="get" style="display: block;">
-            <select name="orderby" class="orderby" aria-label="Shop order">
-                <option value="menu_order" selected="selected">Default sorting</option>
-                <option value="popularity">Sort by popularity</option>
-                <option value="rating">Sort by average rating</option>
-                <option value="date">Sort by latest</option>
-                <option value="price">Sort by price: low to high</option>
-                <option value="price-desc">Sort by price: high to low</option>
-            </select>
-            <input type="hidden" name="paged" value="1">
-        </form>
-        <ul class="products columns-4">
-            <li class="product type-product post-233 status-publish first instock product_cat-uncategorized has-post-thumbnail taxable shipping-taxable purchasable product-type-variable">
-                <a href="https://slutprojekt.test/product/4-pack-small-ceramic-plates/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="300" height="300" src="https://slutprojekt.test/wp-content/uploads/2024/02/header-section4-part4-img-300x300.png" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" decoding="async" fetchpriority="high"
-                        srcset="https://slutprojekt.test/wp-content/uploads/2024/02/header-section4-part4-img-300x300.png 300w, https://slutprojekt.test/wp-content/uploads/2024/02/header-section4-part4-img-150x150.png 150w, https://slutprojekt.test/wp-content/uploads/2024/02/header-section4-part4-img-100x100.png 100w" sizes="(max-width: 300px) 100vw, 300px">
-                    <h2 class="woocommerce-loop-product__title">4-pack Small Ceramic Plates</h2>
-                    <div class="cfvsw_variations_form variations_form cfvsw_shop_align_left"
-                        data-product_variations="[{&quot;attributes&quot;:{&quot;attribute_pa_color&quot;:&quot;gray&quot;},&quot;availability_html&quot;:&quot;&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;&quot;,&quot;width&quot;:&quot;&quot;,&quot;height&quot;:&quot;&quot;},&quot;dimensions_html&quot;:&quot;N\/A&quot;,&quot;display_price&quot;:30,&quot;display_regular_price&quot;:30,&quot;image&quot;:{&quot;title&quot;:&quot;header-section4-part4-img&quot;,&quot;caption&quot;:&quot;&quot;,&quot;url&quot;:&quot;https:\/\/slutprojekt.test\/wp-content\/uploads\/2024\/02\/header-section4-part4-img.png&quot;,&quot;alt&quot;:&quot;header-section4-part4-img&quot;,&quot;src&quot;:&quot;https:\/\/slutprojekt.test\/wp-content\/uploads\/2024\/02\/header-section4-part4-img.png&quot;,&quot;srcset&quot;:&quot;https:\/\/slutprojekt.test\/wp-content\/uploads\/2024\/02\/header-section4-part4-img.png 306w, https:\/\/slutprojekt.test\/wp-content\/uploads\/2024\/02\/header-section4-part4-img-218x300.png 218w&quot;,&quot;sizes&quot;:&quot;(max-width: 306px) 100vw, 306px&quot;,&quot;full_src&quot;:&quot;https:\/\/slutprojekt.test\/wp-content\/uploads\/2024\/02\/header-section4-part4-img.png&quot;,&quot;full_src_w&quot;:306,&quot;full_src_h&quot;:422,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/slutprojekt.test\/wp-content\/uploads\/2024\/02\/header-section4-part4-img-100x100.png&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/slutprojekt.test\/wp-content\/uploads\/2024\/02\/header-section4-part4-img-300x300.png&quot;,&quot;thumb_src_w&quot;:300,&quot;thumb_src_h&quot;:300,&quot;src_w&quot;:306,&quot;src_h&quot;:422},&quot;image_id&quot;:108,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:&quot;&quot;,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&quot;,&quot;sku&quot;:&quot;&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:297,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;&quot;,&quot;weight_html&quot;:&quot;N\/A&quot;}]"
-                        data-product_id="233" current-image="">
-                        <table class="cfvsw-shop-variations variations" cellspacing="0">
-                            <tbody>
-                                <tr>
-                                </tr>
-                                <tr>
-                                    <td class="value">
-                                        <div class="cfvsw-hidden-select"><select id="pa_color" class="" name="attribute_pa_color" data-attribute_name="attribute_pa_color" data-show_option_none="yes">
-                                                <option value="">Choose an option</option>
-                                                <option value="gray" class="attached enabled">Gray</option>
-                                            </select></div>
-                                        <div class="cfvsw-swatches-container cfvsw-shop-container" swatches-attr="attribute_pa_color">
-                                            <div class="cfvsw-swatches-option" data-slug="gray" data-title="Gray" data-tooltip="" style="min-width:24px;min-height:24px;border-radius:10px;">
-                                                <div class="cfvsw-swatch-inner" style="background-color:#c4bdb6;"></div>
-                                            </div>
-                                        </div><a class="reset_variations" href="#" style="visibility: hidden;">Clear</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-    
-                    <span class="price"><span class="woocommerce-Price-amount amount"><bdi>30.00&nbsp;<span class="woocommerce-Price-currencySymbol">kr</span></bdi></span></span>
+    <!-- <div>
+            <div class="related-product">
+                <a href="https://slutprojekt.test/product/square-clear-glass-box/">
+                    <img width="300" height="300" src="http://slutprojekt.test/wp-content/uploads/2024/02/Rectangle-7-300x300.png" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" decoding="async" loading="lazy"
+                        srcset="https://slutprojekt.test/wp-content/uploads/2024/02/Rectangle-7-300x300.png 300w, https://slutprojekt.test/wp-content/uploads/2024/02/Rectangle-7-150x150.png 150w, https://slutprojekt.test/wp-content/uploads/2024/02/Rectangle-7-100x100.png 100w" sizes="(max-width: 300px) 100vw, 300px" />
                 </a>
-                <div class="hover-buttons">
-                    <a href="https://slutprojekt.test/product/4-pack-small-ceramic-plates/" class="button add_to_cart_button"></a>
-                    <p>|</p>
-                    <a href="#" class="button like_button"></a>
-                </div>
-            </li>
-        </ul>
+                <h3>Square Clear Glass Box</h3>
+            </div>
+            <div class="related-product">
+                <a href="https://slutprojekt.test/product/metal-wire-basket/">
+                    <img width="300" height="300" src="http://slutprojekt.test/wp-content/uploads/2024/02/Rectangle-12-300x300.png" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" decoding="async" loading="lazy"
+                        srcset="https://slutprojekt.test/wp-content/uploads/2024/02/Rectangle-12-300x300.png 300w, https://slutprojekt.test/wp-content/uploads/2024/02/Rectangle-12-150x150.png 150w, https://slutprojekt.test/wp-content/uploads/2024/02/Rectangle-12-100x100.png 100w" sizes="(max-width: 300px) 100vw, 300px" />
+                </a>
+                <h3>Metal Wire Basket</h3>
+            </div>
+        <div class="related-product">
+            <a href="https://slutprojekt.test/product/4-pack-small-ceramic-plates/">
+                <img width="300" height="300" src="http://slutprojekt.test/wp-content/uploads/2024/02/header-section4-part4-img-300x300.png" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" decoding="async" loading="lazy"
+                    srcset="https://slutprojekt.test/wp-content/uploads/2024/02/header-section4-part4-img-300x300.png 300w, https://slutprojekt.test/wp-content/uploads/2024/02/header-section4-part4-img-150x150.png 150w, https://slutprojekt.test/wp-content/uploads/2024/02/header-section4-part4-img-100x100.png 100w" sizes="(max-width: 300px) 100vw, 300px" />
+            </a>
+            <h3>4-pack Small Ceramic Plates</h3>
+        </div>
+        <div class="related-product">
+            <a href="https://slutprojekt.test/product/round-jute-placemat/">
+                <img width="300" height="300" src="http://slutprojekt.test/wp-content/uploads/2024/02/Rectangle-11-300x300.png" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" decoding="async" loading="lazy"
+                    srcset="https://slutprojekt.test/wp-content/uploads/2024/02/Rectangle-11-300x300.png 300w, https://slutprojekt.test/wp-content/uploads/2024/02/Rectangle-11-150x150.png 150w, https://slutprojekt.test/wp-content/uploads/2024/02/Rectangle-11-100x100.png 100w" sizes="(max-width: 300px) 100vw, 300px" />
+            </a>
+            <h3>Round Jute Placemat</h3>
+            </div>
     </div> -->
-    
 
-        <!-- <div class="custom-products-list">
-            <ul class="products columns-4">
-                <li class="product type-product post-233 status-publish first instock product_cat-uncategorized has-post-thumbnail taxable shipping-taxable purchasable product-type-variable">
 
-                </li>
-            </ul>
-        </div> -->
+
 </body>
 
 </html>

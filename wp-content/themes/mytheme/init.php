@@ -18,6 +18,13 @@ function mytheme_enqueue()
 {
     $theme_directory = get_template_directory_uri();
     wp_enqueue_style("mystyle", $theme_directory . "/style.css");
+    wp_enqueue_style(
+        'font-awesome-free', // ID
+        'https://use.fontawesome.com/releases/v6.5.1/css/all.css', // Font Awesome CDN link
+        array(), // dependency，nothing，null array
+        '6.5.1' // version number
+    );
+
     // array('jquery')确保在脚本之前加载jQuery
     // 最后的true参数表示脚本将在文档<body>的闭合标签之前加载，这通常是为了确保所有的HTML元素都已经加载，从而可以安全地绑定事件监听器等。
     wp_enqueue_script("shop_page_custom_js", $theme_directory . "/resources/js/shop-page-custom.js", array('jquery'), null, true);
