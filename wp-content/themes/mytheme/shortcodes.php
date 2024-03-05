@@ -180,3 +180,7 @@ function home_top_1()
 <?php
 }
 add_shortcode("shortcode_home_top_1", "home_top_1");
+
+
+add_shortcode('email_subscription_form', 'email_subscription_form_shortcode');
+add_shortcode('display_products', 'display_products_shortcode');

@@ -42,6 +42,16 @@
         background: #DBD0CCCC;
         border: 1px solid #000000;
     }
+
+    .wp-block-image img {
+        /* box-sizing: border-box; */
+        /* height: auto; */
+        /* max-width: 100%; */
+        /* vertical-align: bottom; */
+        width: auto;
+        height: auto;
+    }
+    
     .header-section2-part2-p1 {
         font-family: Roboto;
         font-size: 18px;
@@ -60,5 +70,30 @@
         line-height: 56px;
         letter-spacing: 0em;
         text-align: left;
+    }
+}
+
+.wp-block-group__inner-container img.wp-image-331{
+    width: 100%;
+}
+
+
+
+.right-content{
+    input{
+        width: 515px;
+        height: 50px;
+        border: 1px solid black;
+        padding: 26px;
+        margin-bottom: 38px;
+        margin-left: 175px;
+    }
+    button{
+        width: 85px;
+        height: 54px;
+        background-color: black;
+        border: 1px solid black;
+        margin-left: 690px;
+        margin-top: -92px;
     }
 }
