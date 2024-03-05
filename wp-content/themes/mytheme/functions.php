@@ -218,3 +218,16 @@ function display_rating_products_with_images() {
 
 // Step 2: Register the shortcode
 add_shortcode('all_product_stars_with_images', 'display_rating_products_with_images');
+
+
+
+
+// Add shortcode
+add_shortcode( 'display_product_variations', 'custom_display_product_variations_shortcode' );
+
+// Shortcode callback function
+function custom_display_product_variations_shortcode() {
+    ob_start(); // Start output buffering
+    custom_display_product_variations(); // Call your existing function
+    return ob_get_clean(); // Return the buffered content
+}
