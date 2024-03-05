@@ -59,6 +59,7 @@ add_action('wp_ajax_my_load_more_products', 'my_load_more_products');
 
 
 
+
 // /*
 // **
 // */

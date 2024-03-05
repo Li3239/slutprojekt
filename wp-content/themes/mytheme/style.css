@@ -379,13 +379,15 @@ ul.is-flex-container.columns-3 li a {
     margin-top: 236px;
     margin-left: 20px;
 }
-.related.products{
-    margin-top: 1198px;
+section.related.products li{
+    margin-top: 1038px;
     margin-left: 67px;
 }
 
 ul.products.columns-4{
     display: flex;
+    margin-right: 1042px;
+    margin-left: 1px;
 }
 
 
@@ -407,7 +409,9 @@ ul.products.columns-4{
     line-height: 30px;
 }
 
-
+tr.woocommerce-product-attributes-item td.woocommerce-product-attributes-item__valuep:first-child{
+    display: none;
+}
 .woocommerce-product-details__short-description p:first-child {
     color: red;
     font-family: Roboto;
@@ -455,6 +459,60 @@ ul.products.columns-4{
     margin-left: 1211px;
     margin-top: -191px;
 }
+
+.woocommerce-Tabs-panel--additional_information .product-image img.attachment-woocommerce_thumbnail{
+    width: 25px;
+    height: 25px;
+    margin-left: 1215;
+    border: 1px solid #323334;
+}
+
+.woocommerce-Tabs-panel--additional_information .stock-status p{
+    margin-left: 1215;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #00000080;    
+}
+
+table.woocommerce-product-attributes tbody  tr:nth-child(2) td.woocommerce-product-attributes-item__value p{
+    margin-top: -80px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+table.woocommerce-product-attributes tbody  p:first-child td.woocommerce-product-attributes-item__value p{
+   display: none;
+
+}
+
+select#product_size{
+    border: 1px solid #323334;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-left: 19px;
+    width: 322px;
+    height: 39px;
+    color: #323334;
+
+
+}
+
+
+
+
 /* .woocommerce-product-gallery--with-images{
     margin: 40px;
 } */ 
