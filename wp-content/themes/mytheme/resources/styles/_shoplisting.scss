@@ -42,10 +42,6 @@ main {
             flex: 3;
             position: relative;
 
-            .product-category-title {
-                padding-left: 10px;
-            }
-
             .current-category-description {
                 padding-left: 10px;
                 margin: 20px 0;
@@ -69,16 +65,13 @@ main {
             .product-category-title {
                 @include product-category-page-category-name-style;
                 color: $primary-text-color;
+                padding-left: 10px;
                 margin-bottom: 30px;
             }
-
+            
             .current-category-description {
-                font-family: Roboto;
-                font-size: 18px;
-                font-weight: 300;
-                line-height: 21px;
-                letter-spacing: 0em;
-                text-align: left;
+                @include product-category-page-category-descriptionm-style;
+                color: $primary-text-color;
             }
             .sort-button {
                 cursor: pointer;
@@ -335,11 +328,12 @@ main {
     }
 }
 
-/* 基础星星样式 */
+//-----------------
+// 产品评分 星星
+//-----------------
 .star-rating {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    // color: #a9a9a9 !important;
     display: inline-block;
     line-height: 0;
     width: 6em;
@@ -348,12 +342,11 @@ main {
         color: $star-rating-full-color !important;
         display: inline-block;
         font-size: 1rem;
-        /* 或其他尺寸 */
+        // 确保和font-size一致
         line-height: 1;
-        /* 确保和font-size一致 */
     }
 
-    /* 满星样式 */
+    // 满星样式
     .full-star {
         display: inline-block;
         color: $star-rating-full-color;
@@ -367,20 +360,6 @@ main {
         width: 1em;
     }
 
-    // .half-star::before {
-    //     content: "\f005";
-    //     // Font Awesome 实心星星图标
-    //     font-family: "Font Awesome 5 Free";
-    //     // content: "\f089";
-    //     position: absolute;
-    //     left: 0;
-    //     top: 0;
-    //     // 只覆盖半个星星
-    //     // width: 10%;
-    //     overflow: hidden;
-    //     color: $star-rating-full-color;
-    //     font-weight: 900;
-    // }
     .half-star-font-awesome {
         display: inline-block;
         vertical-align: top;
@@ -393,58 +372,11 @@ main {
         font-weight: 900;
     }
 
-    // 半星样式 - 通过添加半星图标和改变颜色实现
-    // .half-star::after {
-    //     font-weight: 900;
-    //     // Font Awesome 半星图标的代码
-    //     content: "\f089";
-    //     position: absolute;
-    //     color: $star-rating-empty-color;
-    //     border: none;
-    //     // 调整位置覆盖灰色星星
-    //     margin-left: -1em;
-    // }
-
     // 空星样式
     .empty-star {
         color: $star-rating-empty-color !important;
     }
 }
-
-// .star-rating {
-//     font-family: 'Font Awesome 5 Free';
-//     font-weight: 900;
-//     color: #a9a9a9 !important;
-//     display: inline-block;
-//     span {
-//         color: $star-rating-full-color !important;
-//     }
-
-//     /* 满星样式 */
-//     .full-star {
-//         color: $star-rating-full-color;
-//     }
-
-//     .half-star {
-//         color: $star-rating-full-color;
-//     }
-//     // 半星样式 - 通过添加半星图标和改变颜色实现
-//     .half-star::after {
-//         font-weight: 900;
-//         // Font Awesome 半星图标的代码
-//         content: "\f089";
-//         position: absolute;
-//         color: $star-rating-full-color;
-//         border: none;
-//         /* 调整位置覆盖灰色星星 */
-//         margin-left: -1em;
-//     }
-
-//     // 空星样式
-//     .empty-star {
-//         color: $star-rating-empty-color !important;
-//     }
-// }
 
 //-----------------------------
 // 为了实现 home 页面的评分显示效果

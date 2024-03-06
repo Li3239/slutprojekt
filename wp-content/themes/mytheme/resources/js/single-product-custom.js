@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
 
-    console.log('App.js loaded successfully');
+    // console.log('App.js loaded successfully');
     document.querySelectorAll('.custom-select__trigger').forEach(function(trigger) {
         trigger.addEventListener('click', function() {
             var options = ['Small', 'Medium', 'Large']; // Array of sizes

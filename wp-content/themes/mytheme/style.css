@@ -386,7 +386,7 @@ section.related.products li{
 
 ul.products.columns-4{
     display: flex;
-    margin-right: 1042px;
+    /* margin-right: 1042px; */
     margin-left: 1px;
 }
 

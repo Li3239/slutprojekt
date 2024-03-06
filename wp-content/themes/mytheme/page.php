@@ -37,12 +37,12 @@ $recent_posts = wp_get_recent_posts(
         'post_status' => 'publish' // should be published post
     )
 );
-if (count($recent_posts) > 0) {
-    echo '<ul class="footer-blog-posts">';
-    foreach ($recent_posts as $post) {
-        echo '<li><a href="' . get_permalink($post["ID"]) . '">' . esc_attr($post["post_title"]) . '</a></li>';
-    }
-    echo '</ul>';
-}
+// if (count($recent_posts) > 0) {
+//     echo '<ul class="footer-blog-posts">';
+//     foreach ($recent_posts as $post) {
+//         echo '<li><a href="' . get_permalink($post["ID"]) . '">' . esc_attr($post["post_title"]) . '</a></li>';
+//     }
+//     echo '</ul>';
+// }
 
 ?>
