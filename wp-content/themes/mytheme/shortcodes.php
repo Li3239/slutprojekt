@@ -1,4 +1,12 @@
 <?php
+
+@require_once ("home-sections/top_rated_products_custom.php");
+@require_once ("home-sections/hot_sale_section_custom.php");
+// @require_once("parts/custom_newsletter.php");
+@require_once ("home-sections/hot_sale_section_custom.php");
+@require_once ("home-sections/mytheme_custom_cta_sale.php");
+@require_once ("home-sections/newsletter_subscription_form_shortcode.php");
+
 /*
 ** 1. Add shortcodes.php in init.php
 ** 2. Add defined shortcode in some page by writing 【[/]shortcode】 ：【[mytheme_box]】
@@ -160,20 +168,20 @@ function home_top_1()
 
     <div class="home-section1">
         <div class="home-top">
-            <img src="<?= get_template_directory_uri() . "/resources/assets/images/delievery.svg"; ?>" class="header-icon" />
             <img src="<?= get_template_directory_uri() . "/resources/images/delievery.svg"; ?>" class="header-icon" />
+            
             <h2>FREE SHIPPING</h2>
         </div>
 
         <div class="home-top">
-            <img src="<?= get_template_directory_uri() . "/resources/assets/images/moneyback.svg"; ?>" class="header-icon" />
             <img src="<?= get_template_directory_uri() . "/resources/images/moneyback.svg"; ?>" class="header-icon" />
+            
             <h2>100% MONEY BACK</h2>
         </div>
 
         <div class="home-top">
-            <img src="<?= get_template_directory_uri() . "/resources/assets/images/support.svg"; ?>" class="header-icon" />
             <img src="<?= get_template_directory_uri() . "/resources/images/support.svg"; ?>" class="header-icon" />
+           
             <h2>SUPPORT 24/7</h2>
         </div>
     </div>
@@ -182,5 +190,17 @@ function home_top_1()
 add_shortcode("shortcode_home_top_1", "home_top_1");
 
 
-add_shortcode('email_subscription_form', 'email_subscription_form_shortcode');
+// add_shortcode('email_subscription_form', 'email_subscription_form_shortcode');
 add_shortcode('display_products', 'display_products_shortcode');
+add_shortcode('top_rated_products', 'display_top_rated_products_shortcode');
+// add_shortcode("box", "moody_studio_shortcode_draw_box");
+add_shortcode('custom_cta_sale', 'mytheme_custom_cta_sale');
+
+// add_shortcode('hot_sale_custom', 'hot_sale_sortcode');
+// add_shortcode('custom_product_photo', 'mytheme_custom_product_photo');
+add_shortcode('newsletter_subscription_form', 'newsletter_subscription_form_shortcode');
+
+
+
+
+

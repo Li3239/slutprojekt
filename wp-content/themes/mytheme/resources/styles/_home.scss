@@ -1,4 +1,8 @@
-.home-section1 {
+main{
+    
+    
+/*********SECTION-01*******/    
+    .home-section1 {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -26,74 +30,450 @@
             margin: 0; // Reset default margin
         }
     }
+}
 
-    ul {
-        display: flex;
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
 
-        li {
-            margin-right: 20px; // Adjust spacing between list items
+
+/*********SECTION-02*******/
+
+.home-section2-container{
+    background-color: #DBD0CCCC;
+    height: 400px;
+}
+
+
+/*********SECTION-03*******/
+
+.home-section3-container {
+    width: calc(100% - 154px);
+    height: auto;
+    margin: auto;
+    padding-top: 30px;
+
+    .home-section3-part1-container, .home-section3-part2-container {
+        background-color: #FAFAFA;
+        padding: 20px;
+        .left-product-title, .right-product-button {
+            font-family: 'Roboto-Bold';
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 32.81px;
+            color: $primary-font-color; 
+        }
+
+        .wp-block-button__link.wp-element-button{
+            font-size: 20px;
+            margin-top: 20px;
+            border: 1px solid #FFFFFF;
+            color: #323334;
+            border-radius: 0;
+            background-color: #fafafa;
+
+            
+           
+        
         }
     }
 
-    .wp-block-columns{
-        background: #DBD0CCCC;
-        border: 1px solid #000000;
-    }
+/*********SECTION-04*******/
 
-    .wp-block-image img {
-        /* box-sizing: border-box; */
-        /* height: auto; */
-        /* max-width: 100%; */
-        /* vertical-align: bottom; */
-        width: auto;
-        height: auto;
+    .home-section3-part2-container{
+        width:calc(100% - 154px);
+        background-color: #EAE9E7;
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 16px;
+        letter-spacing: 0em;
+        text-align: left;
+
     }
     
-    .header-section2-part2-p1 {
-        font-family: Roboto;
-        font-size: 18px;
+}
+
+
+
+.home_4products_in_section{
+    width: calc(100% - 154px);
+    height: 566px;
+    margin: auto;
+    padding-bottom: 50px;
+
+    .left_column_container{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 25%;
+        width: 306px;
+        height: 100%;
+        overflow: hidden;
+
+        .cover-image-column{
+            width: 50%;
+            margin-left: -363px;
+            margin-top: 30px;
+        }
+
+        .cove_title{
+            font-family: 'Roboto-Bold';
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 32.81px;
+            color: #FFFFFF;
+        }
+
+        .cover_description{
+            font-family: 'Roboto-Bold';
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 22px;
+            color: #FFFFFF;
+        }
+
+        .cover_view_all_button{
+            margin-top: 20px;
+                padding: 10px 20px;
+                background-color: transparent;
+                color: #FFFFFF;
+                border: 1px solid #FFFFFF;
+                cursor: pointer;
+                text-transform: uppercase;
+                transition: background-color 0.3s ease;
+                &:hover{
+                    color: $primary-font-color;
+                    background-color: #8a7777;
+        }
+        
+    }
+
+
+    }
+
+}
+
+
+.three_products_column{
+    width: 75%;
+    height: 566px;
+    margin: auto;
+    margin-left: 30px;
+
+
+    .product-01,
+    .product-02,
+    .product-03{
+      margin-left: 300px;
+        
+        ul.products.columns-4{
+             li.product{
+                width: 239px;
+                margin-top: -49px;
+                margin-left: -669px;
+                
+                
+                 a{
+                    text-decoration: none;
+                    color: $primary-font-color;
+
+                    h2.woocommerce-loop-product__title{
+                        font-family: 'Roboto-Bold';
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 21.09px;
+                        margin-left: -137px;
+                    }
+
+                    .star-rating{
+                        margin-left: -136px;
+                    }
+                    .price{
+                        font-family: 'Roboto-Bold';
+                        font-weight: 700;
+                        font-size: 24px;
+                        line-height: 28.13px;
+                        color: $primary-font-color;
+                        margin-left: -136px;
+                    }
+
+                    img{
+                        width: calc(100% - 20px);
+                        height: 329px;
+                        width:  323px;
+                        margin-left: -142px;
+                        max-width: none; 
+                    }
+                }
+             }
+        }
+    }
+
+    .home_section6_container{
+        width: calc(100% - 154px);
+    }
+
+}
+
+.home_4products_in_section.wp-container-core-columns-layout-10{
+    margin-left: 462px;
+    margin-top: -101px;
+}
+
+
+
+
+
+
+
+
+
+/********TOP_RATING_PRODUCTS*********/
+
+
+.top_rated_products_container{
+    width: calc(100% - 154px);
+    margin: auto;
+
+}
+
+.products_dispaly_container{
+    width: calc(100% - 154px); 
+    margin: auto;
+    .woocommerce-loop-product__title, p.top_rating_tittle{
+        font-family: "Roboto-Bold";
         font-weight: 700;
-        line-height: 26px;
-        letter-spacing: 0em;
-        text-align: left;
+        font-size: 34px;
+        line-height: 39.84px;
+        color: black;
+        padding-top: 85px;
+        padding-bottom: -128px;
         color: #323334;
-        margin-top: 30px;
-    }
+        margin-left: 96px;
+        margin-bottom: 70px;
+    }            
 
-    .header-section2-part2-p2 {
-        font-family: Roboto;
-        font-size: 48px;
-        font-weight: 700;
-        line-height: 56px;
-        letter-spacing: 0em;
-        text-align: left;
+
+    .columns-4{
+        .products {
+            .product {
+                display: flex;
+                width: 29%;
+                .woocommerce-LoopProduct-link{
+                    display: flex;
+                    img{
+                        height: 308px;
+                        width: 198px;
+                    }
+                    .woocommerce-loop-product__title,
+                    .my-custom-rating,
+                    .price{
+                        display: block;
+                    }   
+                    .woocommerce-loop-product__title{
+                        font-family: 'Roboto-Bold';
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 21.09px;
+                        color: $primary-font-color;
+                        
+                    }
+
+                    .price{
+                        font-family: 'Roboto-Bold';
+                        font-weight: 700;
+                        font-size: 24px;
+                        line-height: 28.13px;
+                        color: $primary-font-color;
+                        
+                    }
+
+                }
+                .button{
+                    display: block;
+                }
+            }
+        }
     }
 }
 
-.wp-block-group__inner-container img.wp-image-331{
-    width: 100%;
+p.top_rating_tittle{
+    color: #A86A3D;
 }
 
+        #sale_box_container{
+            width:100%;
 
 
-.right-content{
-    input{
-        width: 515px;
-        height: 50px;
-        border: 1px solid black;
-        padding: 26px;
-        margin-bottom: 38px;
-        margin-left: 175px;
-    }
-    button{
-        width: 85px;
-        height: 54px;
-        background-color: black;
-        border: 1px solid black;
-        margin-left: 690px;
-        margin-top: -92px;
-    }
+            .woocommerce{
+                background: #FFFFFFE5;
+                width: 597px;
+                height: 377px;
+
+                h2{
+                font-family: Roboto;
+                font-size: 28px;
+                font-weight: 700;
+                line-height: 33px;
+                letter-spacing: 0em;
+                text-align: left;
+                color:  #323334;
+                width: 9em;
+                }
+
+                .price{
+                font-family: Roboto;
+                font-size: 28px;
+                font-weight: 700;
+                line-height: 33px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #7B5136;
+                width: 9em;    
+                }
+
+                .hover-buttons {
+                    .button{
+                            .add_to_cart_button{
+                                font-family: Roboto;
+                                font-size: 14px;
+                                font-weight: 700;
+                                line-height: 16px;
+                                letter-spacing: 0em;
+                                text-align: left;
+                                color: #323334;
+
+                            }
+                    } 
+                }
+            }
+            .sale_box {
+                background-image: url('../images/bedseet.png');
+                background-size: cover; /* Cover the entire element */
+                background-position: center; /* Center the image */
+                /* Optionally, you can add more properties like background-repeat, background-attachment, etc. */
+            }
+            img{
+                display: none;
+            }
+
+            .onsale{
+                display: none;
+            }
+
+            .percent-off{
+                display: none;
+            }
+
+            .star-rating{
+                display: none;
+            }
+        }
+
+
+
+        /********newsletter*********/
+        .newsletter-subscription-form {
+            width: calc(100% - 154px);
+            display: flex;
+            justify-content: space-between; /* Align items horizontally with space between */
+        
+            .left-content {
+                .sign-up-text {
+                    font-family: 'Roboto-Bold';
+                    font-weight: 700;
+                    font-size: 28px;
+                    line-height: 32.81px;
+                    color: $primary-font-color;
+                    margin-left: 30px;
+                    margin-top: -14px;;
+                }
+        
+                .subscribe-text {
+                    font-family: 'Roboto-Regular';
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 28.13px;
+                    color: $primary-font-color;
+                    margin-left: 30px;
+                    margin-top: -3px;
+                }
+            }
+        
+            .right-content {
+                display: flex;
+                input[type="email"] {
+                    width: 515px;
+                    height: 50px;
+                    border: 1px solid black;
+                    padding: 44px;
+                    margin-bottom: 34px;
+                    padding-bottom: 5px;
+                }
+        
+                button[type="submit"] {
+                    width: 85px;
+                    height: 50px;
+                    background-color: $primary-font-color;
+                    border: 1px solid $primary-font-color;
+                    margin-left: -4px;
+        
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        
+        .newsletter-section{
+             width: calc(100% - 154px);
+            margin: auto;
+            padding-bottom: 30px;
+            .newsletter-subscription-form{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .left-content{
+                    .sign-up-text{
+                        // font-family: $bold-font;
+                        font-weight: 700;
+                        font-size: 28px;
+                        line-height: 32.81px;
+                        color: $primary-font-color;
+                    }
+                    .subscribe-text{
+                        // font-family: $regular-font;
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 28.13px;
+                        color: $primary-font-color;
+                        margin-top: 15px;
+                    }
+                }
+    
+                .right-content{
+                    input{
+                        width: 515px;
+                        height: 50px;
+                        border: 1px solid $primary-font-color;
+                        padding: 20px;
+                    }
+                    button{
+                        width: 85px;
+                        height: 50px;
+                        background-color: $primary-font-color;
+                        border: 1px solid $primary-font-color;
+                        margin-left: -5px;
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            background-color: transparent; 
+                        }
+                    }
+                }
+            }
+        }
+
+
 }

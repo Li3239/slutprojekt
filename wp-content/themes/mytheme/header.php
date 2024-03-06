@@ -34,16 +34,36 @@
 
                 <div class="header-icons">
 
+                <a href="">
                     <img src="<?= get_template_directory_uri() . "/resources/images/search.svg"; ?>"
                         class="header-icon" />
+                </a>
+
+                <a href="https://slutprojekt.test/my-account/">
                     <img src="<?= get_template_directory_uri() . "/resources/images/person.svg"; ?>"
                         class="header-icon" />
-                    <img src="<?= get_template_directory_uri() . "/resources/images/basket.webp"; ?>"
-                        class="header-icon" />
+                </a>
+
+                  
+                    <div class="basket-icon">
+                        <a href="<?php echo esc_url(wc_get_cart_url()); ?>">
+                            <img src="<?= get_template_directory_uri() . "/resources/images/basket.webp"; ?>"
+                                class="header-icon" />
+                            <?php
+                            $cart_count = WC()->cart->get_cart_contents_count();
+                            if ($cart_count > 0) {
+                                echo '<span class="cart-count">' . $cart_count . '</span>';
+                            }
+                            ?>
+                        </a>
+                    </div>
+                    <!-- End of basket icon with cart count -->
+                    <a href="">
                     <img src="<?= get_template_directory_uri() . "/resources/images/favorite.png"; ?>"
                         class="header-icon" />
-
+                    </a>
                 </div>
+
 
             </div>
 
