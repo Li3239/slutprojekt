@@ -71,7 +71,7 @@
         </header>
     </body>
 
-    <div class="home-section1">
+    <!-- <div class="home-section1">
 
 
         <div class="home-top">
@@ -88,6 +88,6 @@
             <img src="<?= get_template_directory_uri() . "/resources/images/support.svg"; ?>" class="header-icon" />
             <h2>SUPPORT 24/7</h2>
         </div>
-    </div>
+    </div> -->
 
     </html>

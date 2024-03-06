@@ -19,7 +19,7 @@
 
     <div class="column-newsletter">
 
-        <div class="subscribe">
+        <!-- <div class="subscribe">
             <form class="subscribe-form1">
                 <input type="email" placeholder="Enter your e-mail Address">
                 <button type="submit" class="email">
@@ -27,7 +27,7 @@
                 </button>
 
             </form>
-        </div>
+        </div> -->
 
 
 
@@ -49,12 +49,12 @@ $recent_posts = wp_get_recent_posts(
         'post_status' => 'publish' // should be published post
     )
 );
-if (count($recent_posts) > 0) {
-    echo '<ul class="footer-blog-posts">';
-    foreach ($recent_posts as $post) {
-        echo '<li><a href="' . get_permalink($post["ID"]) . '">' . esc_attr($post["post_title"]) . '</a></li>';
-    }
-    echo '</ul>';
-}
+// if (count($recent_posts) > 0) {
+//     echo '<ul class="footer-blog-posts">';
+//     foreach ($recent_posts as $post) {
+//         echo '<li><a href="' . get_permalink($post["ID"]) . '">' . esc_attr($post["post_title"]) . '</a></li>';
+//     }
+//     echo '</ul>';
+// }
 
 ?>

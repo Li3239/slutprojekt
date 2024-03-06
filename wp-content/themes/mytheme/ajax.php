@@ -2,17 +2,17 @@
 
 define("PRODUCT_QUANTITY_PER_PAGE", 6); 
 
-/*
- * add js setting 
- */
+//-----------------------------
+// add script dependency
+//-----------------------------
 function my_theme_enqueue_scripts()
 {
-    // wp_enqueue_script('my-custom-load-more', get_stylesheet_directory_uri() . '/resources/js/lazyload.js', array('jquery'), '1.0', true);
     // wp_enqueue_script("mytheme_jquery", get_template_directory_uri() . "/resources/js/jquery.js", array(), false, array());
-    wp_enqueue_script("mytheme_lazy_load", get_template_directory_uri() . "/resources/js/lazyload.js", array("mytheme_jquery"), false, array());
+    // 使用wordpress自带的jQuery库
+    wp_enqueue_script("mytheme_lazy_load", get_template_directory_uri() . "/resources/js/lazyload.js", array("jquery"), '1.0', true);
 
     // 本地化脚本以包含 AJAX URL 和 nonce
-    //wp_localize_script 函数允许将服务器端的 PHP 数据安全地传递到前端的 JavaScript 文件中
+    // wp_localize_script 函数允许将服务器端的 PHP 数据安全地传递到前端的 JavaScript 文件中
     wp_localize_script('mytheme_lazy_load', 'ajax_params', array(
         //将 WordPress 后端处理 AJAX 请求的 URL (admin-ajax.php) 传递给前端 JavaScript
         'ajax_url' => admin_url('admin-ajax.php'),
@@ -23,33 +23,47 @@ function my_theme_enqueue_scripts()
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_scripts');
 
 
-/*
- * Lazy load 
- */
+//-------------------------------
+// Lazy load 
+// 用于实现一个“加载更多产品”的功能
+// 通常与Ajax技术一起使用以提升用户体验
+//-------------------------------
 function my_load_more_products()
 {
-    // verify nonce
-    if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'mytheme_lazy_load_nonce')) {
+    // verify nonce， 检查是否传递了一个名为nonce的POST参数，并且验证这个nonce是否有效
+    if (
+        !isset($_POST['nonce']) ||
+        !wp_verify_nonce($_POST['nonce'], 'mytheme_lazy_load_nonce')
+    ) {
+        // verify NG
         die('Nonce verification failed.');
     }
 
+    // 定义创建新 WP_Query 对象时所需的参数
     $args = array(
-        'post_type' => 'product',
+        'post_type' => 'product',  // 查询WooCommerce的产品
         'posts_per_page' => PRODUCT_QUANTITY_PER_PAGE, // load product quantity for each time
-        'paged' => $_POST['page'],
+        'paged' => $_POST['page'], // 要查询的分页数
     );
 
+    //自定义产品查询，类型为'post_type' => 'product' 也就是产品
     $loop = new WP_Query($args);
 
-    if ($loop->have_posts()) :
-        while ($loop->have_posts()) : $loop->the_post();
+    if ($loop->have_posts()) {
+        while ($loop->have_posts()) {
+            // 准备当前循环中的产品数据，以便可以获取其详细信息，如标题、内容等
+            $loop->the_post();
+            // 负责加载一个模板文件，用于显示单个产品的信息
+            // load template, run content-product.php
             wc_get_template_part('content', 'product');
-        endwhile;
-    else :
+        }
+    } else {
         echo 'No more products to load.';
-    endif;
+    }
 
+    // 重置查询数据，清理查询后的全局数据，恢复到主查询的状态
     wp_reset_postdata();
+    // 结束函数
     die();
 }
 add_action('wp_ajax_nopriv_my_load_more_products', 'my_load_more_products');

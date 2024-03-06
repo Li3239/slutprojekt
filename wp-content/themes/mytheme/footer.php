@@ -97,7 +97,7 @@
     </section>
 
     <section class="container-copyright">
-        <div class="footer-line"></div>
+        <!-- <div class="footer-line"></div> -->
         <span class="site-info">
             <?= get_option("store_copyright") ?>
         </span>

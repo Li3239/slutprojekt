@@ -126,6 +126,7 @@ footer {
                         text-decoration: none;
                         line-height: 30px;
                         @include footer-shopping-links-style;
+                        text-align: left;
                     }
                 }
             }
@@ -138,11 +139,6 @@ footer {
             display: flex;
             flex: 2;
             flex-direction: column;
-
-            // 移除最后一个评论的底部边框
-            // .custom-latest-post:last-child {
-            //     border-bottom: none;
-            // }
 
             .custom-latest-post {
                 width: 100%;
@@ -195,35 +191,33 @@ footer {
             }
         }
 
-        .container-copyright {
+    }
+    .container-copyright {
+        display: flex;
+        flex-direction: column;
+        align-items: center; // 添加居中对齐
+        justify-content: center; // 添加居中布局
+        width: 100%;
+        height: 59px;
+        bottom: 0;
+        background-color: $footer-secondary-background-color;
+
+        .footer-line {
+            width: 100%;
+            height: 1px;
+            flex-shrink: 0;
+            background-color: $footer-line-color;
+            opacity: 0.1;
+        }
+
+        .site-info {
             display: flex;
-            flex-direction: column;
-            width: 90%;
-            height: 59px;
-            margin: auto;
-
-            .footer-line {
-                width: 100%;
-                height: 1px;
-                flex-shrink: 0;
-                background-color: $footer-line-color;
-                opacity: 0.1;
-            }
-
-            .site-info {
-                width: 100%;
-                height: 58px;
-                margin: auto;
-                font-family: Roboto;
-                font-size: 14px;
-                font-weight: 300;
-                line-height: 16px;
-                letter-spacing: 0em;
-                text-align: left;
-                color: #FFFFFF;
-                // @include footer-shopping-links-style;
-                // color: $secondary-font-color;
-            }
+            justify-content: center; 
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            height: 58px;
+            @include footer-shopping-links-style;
         }
     }
 }

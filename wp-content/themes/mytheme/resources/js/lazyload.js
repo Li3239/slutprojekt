@@ -5,22 +5,28 @@ jQuery(function($) {
     var page = 2; // 从第二页开始加载
     var loading = false; // 用来防止重复加载
     var max_pages = 5; // 假设最多有5页内容，你可能需要根据实际情况调整
-
+    // console.log('lazyload.js loaded successfully');
+    
     $(window).scroll(function() {
         // 检查用户是否滚动到页面底部
-        if ($(window).scrollTop() + $(window).height() > $(document).height() - 100 && !loading && page <= max_pages) {
+        if ($(window).scrollTop() + $(window).height() > $(document).height() - 100 && 
+            !loading && page <= max_pages) {
             loading = true; // 防止在加载过程中重复请求
+            console.log("Lazy load page = [" + page.toString() + "]");
 
             var data = {
-                //指定了AJAX请求的action参数为my_load_more_products。
+                //指定了AJAX请求的action参数为 my_load_more_products。
                 //在ajax.php中需要 使用wp_ajax_（登录用户）和wp_ajax_nopriv_（未登录用户）钩子来挂载这个函数
-                'action': 'my_load_more_products', 
+                'action': 'my_load_more_products', // call function  my_load_more_products in ajax.php
                 'page': page,
                 'nonce': ajax_params.nonce // 从 ajax.php 传递的（数字签名）的安全令牌
             };
 
             //ajax_params.ajax_url： ajax.php 中传递到 js 的参数，从而js 可以发送 AJAX 请求到 WordPress 后端
+            //发送一个 POST 请求到 WordPress，data 包含操作（action），页码（page）和一个安全性校验（nonce）。
             $.post(ajax_params.ajax_url, data, function(response) {
+                //服务器端ajax.php 的 my_load_more_products 函数会根据请求中的页码参数加载更多的产品并以 HTML 形式返回
+                //这段 HTML 代码是直接通过my_load_more_products的 wc_get_template_part('content', 'product'); 渲染出来的
                 if (response && response != 'No more products to load.') {
                     $('div.custom-products-list > ul.products.columns-4').append(response);
                     page++;
