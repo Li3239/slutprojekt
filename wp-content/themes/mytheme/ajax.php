@@ -1,6 +1,9 @@
 <?php
 
+
 define("PRODUCT_QUANTITY_PER_PAGE", 6); 
+
+
 
 //-----------------------------
 // add script dependency
@@ -10,6 +13,8 @@ function my_theme_enqueue_scripts()
     // wp_enqueue_script("mytheme_jquery", get_template_directory_uri() . "/resources/js/jquery.js", array(), false, array());
     // 使用wordpress自带的jQuery库
     wp_enqueue_script("mytheme_lazy_load", get_template_directory_uri() . "/resources/js/lazyload.js", array("jquery"), '1.0', true);
+
+    wp_enqueue_script("mytheme_lazy_load", get_template_directory_uri() . "/resources/js/ajax.js", array("jquery"), '1.0', true);
 
     // 本地化脚本以包含 AJAX URL 和 nonce
     // wp_localize_script 函数允许将服务器端的 PHP 数据安全地传递到前端的 JavaScript 文件中
@@ -170,3 +175,40 @@ add_action('wp_ajax_my_load_more_products', 'my_load_more_products');
 //     $json = json_encode($result);
 //     wp_send_json($json);
 // }
+
+
+
+// Register AJAX action
+// add_action('wp_ajax_get_product_details', 'get_product_details');
+// add_action('wp_ajax_nopriv_get_product_details', 'get_product_details');
+
+// function get_product_details() {
+//     // Check if size is provided in the AJAX request
+//     if (isset($_POST['size'])) {
+//         // Retrieve price and stock status based on the selected size
+//         $size = $_POST['size'];
+//         // Perform any necessary logic to determine price and stock status
+//         $price = get_price_based_on_size($size);
+//         $stock_status = get_stock_status_based_on_size($size);
+
+//         // Return JSON response with price and stock status
+//         wp_send_json_success(array('price' => $price, 'stock_status' => $stock_status));
+//     } else {
+//         // Size parameter is missing, return error response
+//         wp_send_json_error('Size parameter is missing');
+//     }
+// }
+
+// // Enqueue custom JavaScript file
+// function enqueue_custom_scripts() {
+//     wp_enqueue_script('custom-script', get_template_directory_uri() . '/js/ajax.js', array('jquery'), '1.0', true);
+//     // Localize script with AJAX URL
+//     wp_localize_script('custom-script', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
+// }
+// add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+
+
+
+
+
+

@@ -8,6 +8,7 @@ require_once('shortcodes.php');
 require_once('custom-widgets.php');
 require_once('single-page-hook.php');
 
+
 //__DIR__: mytheme
 // require_once(__DIR__ . "/hooks/shop-product-hooks.php");
 require_once('customemail.php');

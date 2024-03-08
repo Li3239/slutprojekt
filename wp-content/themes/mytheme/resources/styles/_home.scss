@@ -39,6 +39,39 @@ main{
 .home-section2-container{
     background-color: #DBD0CCCC;
     height: 400px;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    align-items: normal!important;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap!important;
+       
+    
+    
+    .home-section2-part2-p1{
+        font-family: Roboto;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 26px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #323334;
+        margin-top: 105px;
+        margin-bottom: 20px
+    }
+    
+    .home-section2-part2-p2 {
+        font-family: Roboto;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 56px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #A86A3D;
+        margin-top: 90px;
+    } 
+    
+    
 }
 
 
@@ -210,7 +243,7 @@ main{
     .home_section6_container{
         width: calc(100% - 154px);
     }
-
+ 
 }
 
 .home_4products_in_section.wp-container-core-columns-layout-10{
@@ -234,7 +267,9 @@ main{
     margin: auto;
 
 }
-
+.woocommerce{
+    margin-top: -45px;
+}
 .products_dispaly_container{
     width: calc(100% - 154px); 
     margin: auto;
@@ -244,11 +279,12 @@ main{
         font-size: 34px;
         line-height: 39.84px;
         color: black;
-        padding-top: 85px;
+        padding-top: 146px;
         padding-bottom: -128px;
         color: #323334;
         margin-left: 96px;
         margin-bottom: 70px;
+        margin-top: 119px;
     }            
 
 
@@ -257,6 +293,10 @@ main{
             .product {
                 display: flex;
                 width: 29%;
+
+                a{
+                    display: none;
+                }
                 .woocommerce-LoopProduct-link{
                     display: flex;
                     img{
@@ -368,112 +408,103 @@ p.top_rating_tittle{
             }
         }
 
+        .home_section6_container{
 
+            
+            
+            img.wp-image-331{
+                width: 100%;
+                height: auto;
+            }
+.wp-block-group__inner-container{
+            .box{
+                margin-top: -285px;
+                margin-left: 137px;
+                background: #940c0ce5;
+                
 
-        /********newsletter*********/
-        .newsletter-subscription-form {
-            width: calc(100% - 154px);
-            display: flex;
-            justify-content: space-between; /* Align items horizontally with space between */
-        
-            .left-content {
-                .sign-up-text {
-                    font-family: 'Roboto-Bold';
-                    font-weight: 700;
+                h2{
+                    font-family: Roboto;
                     font-size: 28px;
-                    line-height: 32.81px;
-                    color: $primary-font-color;
-                    margin-left: 30px;
-                    margin-top: -14px;;
+                    font-weight: 700;
+                    line-height: 33px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    color: #323334;
+
                 }
-        
-                .subscribe-text {
-                    font-family: 'Roboto-Regular';
-                    font-weight: 400;
-                    font-size: 18px;
-                    line-height: 28.13px;
-                    color: $primary-font-color;
-                    margin-left: 30px;
-                    margin-top: -3px;
+                h3,h4{
+                    color: #7B5136;
+                    
+
                 }
-            }
-        
-            .right-content {
-                display: flex;
-                input[type="email"] {
-                    width: 515px;
-                    height: 50px;
-                    border: 1px solid black;
-                    padding: 44px;
-                    margin-bottom: 34px;
-                    padding-bottom: 5px;
+
+                p{
+                    font-family: Roboto;
+                    font-size: 16px;
+                    font-weight: 300;
+                    line-height: 22px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    color: #323334;
+                    width:216px;
+                    display: flex;
+
+
                 }
-        
-                button[type="submit"] {
-                    width: 85px;
-                    height: 50px;
-                    background-color: $primary-font-color;
-                    border: 1px solid $primary-font-color;
-                    margin-left: -4px;
-        
-                    img {
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
+
             }
         }
-        
-        .newsletter-section{
-             width: calc(100% - 154px);
-            margin: auto;
-            padding-bottom: 30px;
-            .newsletter-subscription-form{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                .left-content{
-                    .sign-up-text{
-                        // font-family: $bold-font;
-                        font-weight: 700;
-                        font-size: 28px;
-                        line-height: 32.81px;
-                        color: $primary-font-color;
-                    }
-                    .subscribe-text{
-                        // font-family: $regular-font;
-                        font-weight: 400;
-                        font-size: 18px;
-                        line-height: 28.13px;
-                        color: $primary-font-color;
-                        margin-top: 15px;
-                    }
-                }
+    }
+    }
+
+      
+
+    .wp-block-columns.is-layout-flex.wp-container-core-columns-layout-12.wp-block-columns-is-layout-flex {
+        display: flex;
+        justify-content: space-between;
+        padding: 60px 40px 60px 40px;
     
-                .right-content{
-                    input{
-                        width: 515px;
-                        height: 50px;
-                        border: 1px solid $primary-font-color;
-                        padding: 20px;
-                    }
-                    button{
-                        width: 85px;
-                        height: 50px;
-                        background-color: $primary-font-color;
-                        border: 1px solid $primary-font-color;
-                        margin-left: -5px;
-                        overflow: hidden;
-
-                        img {
-                            width: 100%;
-                            height: 100%;
-                            background-color: transparent; 
-                        }
-                    }
-                }
-            }
+        h2{
+            font-family: 'Roboto-Bold';
+            font-size: 28px;
+        }
+    
+        p{
+            font-family: 'Roboto-Regular';
+            font-size: 24px;
+        }
+        
+        button {
+            // background-color: url('../images/email.png');
+    //         background-size: cover; 
+    // background-position: center; 
+    // background-repeat: no-repeat;
+    // background-color: transparent;
+            background-color: black;
+            
+            border: none;
+            padding: 12px 30px 10px 30px;
+            cursor: pointer;
+        }
+    
+        input {
+            padding: 12px 191px 42px 20px;
+            margin: 0;
+            float: left;
+            border: 1px solid  #323334;
+            ;    
+        }
+       .wp-container-core-columns-layout-12{
+        .wp-block-column.is-layout-flow.wp-block-column-is-layout-flow:first-child{
+            color:red;
         }
 
-
-}
+        p:nth-child(2) {
+            color: blue;
+            font-style: italic;
+            /* Add any other styles you want to apply to the second paragraph */
+        }
+       }
+    }
+   

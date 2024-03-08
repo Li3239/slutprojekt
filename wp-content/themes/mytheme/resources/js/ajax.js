@@ -30,5 +30,35 @@ function mytheme_getbyajax(searchwords) {
     });
 }
 
-// call the function
-// mytheme_getbyajax("kalle anka");
+
+
+
+
+// jQuery(document).ready(function($) {
+//     $('#product_size').change(function() {
+//         var selectedSize = $(this).val();
+
+//         // Send AJAX request to get product details
+//         $.ajax({
+//             url: ajax_object.ajax_url,
+//             type: 'POST',
+//             data: {
+//                 action: 'get_product_details',
+//                 size: selectedSize
+//             },
+//             success: function(response) {
+//                 // Update price and stock status elements on the frontend
+//                 $('#product_price').text(response.data.price);
+//                 $('#stock_status').text(response.data.stock_status);
+//             },
+//             error: function(xhr, status, error) {
+//                 console.error('Error:', error);
+//             }
+//         });
+//     });
+// });
+
+
+
+
+

@@ -1,6 +1,6 @@
 ****SECTION-02****/
 
-
+/* 
 .home-section2-container {
     background-color:  #923311cc;
     border: 1px solid #000000;
@@ -40,4 +40,13 @@
     display: none;
 }
 
+ */
+ .woocommerce-Reviews{
+    display: none;
+ }
+
+
+ /* .woocommerce-tabs.wc-tabs-wrapper{
+    display: none ;
+ } */
 

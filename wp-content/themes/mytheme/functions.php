@@ -6,6 +6,16 @@ if (!defined('ABSPATH')) {
 
 require_once(get_template_directory() . "/init.php");
 
+function enqueue_custom_scripts() {
+    // Enqueue the custom JavaScript file
+    wp_enqueue_script( 'custom-script', get_template_directory_uri() . '/axja.js', array( 'jquery' ), '1.0', true );
+
+    // Localize script with AJAX URL
+    wp_localize_script( 'custom-script', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_custom_scripts' );
+
+
 /**
  * Add WooCommerce support
  */
@@ -29,6 +39,8 @@ function theme_register_menus()
             'aboutUs-menu' => __('AboutUs Menu', 'theme-text-domain'),
             'news-menu' => __('News Menu', 'theme-text-domain'),
             'contactUs-menu' => __('ContactUs Menu', 'theme-text-domain')
+           
+            
         )
     );
 }

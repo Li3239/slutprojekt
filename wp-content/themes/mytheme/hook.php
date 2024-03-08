@@ -24,3 +24,5 @@ function add_custom_button_to_specific_product() {
     }
 }
 add_action( 'woocommerce_after_shop_loop_item', 'add_custom_button_to_specific_product' );
+
+
