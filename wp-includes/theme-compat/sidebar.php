@@ -15,6 +15,7 @@ _deprecated_file(
 	sprintf( __( 'Please include a %s template in your theme.' ), basename( __FILE__ ) )
 );
 ?>
+	
 	<div id="sidebar" role="complementary">
 		<ul>
 			<?php

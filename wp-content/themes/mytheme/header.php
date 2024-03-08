@@ -49,12 +49,15 @@
                         <a href="<?php echo esc_url(wc_get_cart_url()); ?>">
                             <img src="<?= get_template_directory_uri() . "/resources/images/basket.webp"; ?>"
                                 class="header-icon" />
+
+                            <div class="cart_count">  
                             <?php
                             $cart_count = WC()->cart->get_cart_contents_count();
                             if ($cart_count > 0) {
                                 echo '<span class="cart-count">' . $cart_count . '</span>';
                             }
                             ?>
+                            </div>  
                         </a>
                     </div>
                     <!-- End of basket icon with cart count -->

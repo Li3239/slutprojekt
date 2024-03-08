@@ -45,7 +45,9 @@
     display: none;
  }
 
-
+.product_meta{
+    display: none;
+}
  /* .woocommerce-tabs.wc-tabs-wrapper{
     display: none ;
  } */

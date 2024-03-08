@@ -38,7 +38,8 @@ function theme_register_menus()
             'accessories-menu' => __('Accessories Menu', 'theme-text-domain'),
             'aboutUs-menu' => __('AboutUs Menu', 'theme-text-domain'),
             'news-menu' => __('News Menu', 'theme-text-domain'),
-            'contactUs-menu' => __('ContactUs Menu', 'theme-text-domain')
+            'contactUs-menu' => __('ContactUs Menu', 'theme-text-domain'),
+            'brand-menu' => __('Brand Menu', 'theme-text-domain')
            
             
         )
@@ -262,3 +263,45 @@ function display_products_shortcode() {
 
 // Register the shortcode
 add_shortcode('display_products', 'display_products_shortcode');
+
+
+
+
+
+
+// Add AJAX action to fetch price based on size
+add_action('wp_ajax_get_price_by_size', 'get_price_by_size_callback');
+add_action('wp_ajax_nopriv_get_price_by_size', 'get_price_by_size_callback');
+
+function get_price_by_size_callback() {
+    // Get the selected size from the AJAX request
+    $size = isset($_POST['size']) ? sanitize_text_field($_POST['size']) : '';
+
+    // Perform your price calculation logic based on the selected size
+    // Replace this with your actual price calculation logic
+    $price = calculate_price_by_size($size);
+
+    // Return the price as a response
+    echo $price;
+
+    // Always remember to exit after returning the response
+    wp_die();
+}
+
+// Function to calculate the price based on the selected size
+function calculate_price_by_size($size) {
+    // Perform price calculation logic based on the selected size
+    // Replace this with your actual price calculation logic
+    $price = 0;
+    if ($size === '140') {
+        $price = 300; // Set price for size 140
+    } elseif ($size === '160') {
+        $price = 350; // Set price for size 160
+    } // Add more conditions as needed for other sizes
+
+    // Format the price as needed
+    return $price . ' kr';
+}
+
+
+

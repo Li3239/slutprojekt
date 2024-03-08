@@ -17,15 +17,34 @@ header {
 
         .header-icons {
             display: flex;
-
+        
             .header-icon {
                 width: 30px;
                 height: 30px;
                 margin-right: 29px;
                 color: $primary-text-color;
-                
             }
-        }
+        
+            .basket-icon {
+                a {
+                    text-decoration: none;
+                    div.cart_count {
+                        margin-top: -15px;
+                        color: white;
+                        border-radius: 50px;
+                    }
+                    span.cart-count {
+                        margin: 8px 5px 32px 14px;
+                        background-color: orange;
+                        width: 4px;
+                        padding: 4px 8px 4px 9px;
+                        border-radius: 95px;
+                        text-decoration: none;
+                        }
+                    }
+                }
+            }
+        
     }
 
     /* Header section 2 styles */

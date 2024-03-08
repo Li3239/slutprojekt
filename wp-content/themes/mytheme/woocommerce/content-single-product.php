@@ -27,52 +27,80 @@ global $product;
 do_action( 'woocommerce_before_single_product' );
 
 if ( post_password_required() ) {
-	echo get_the_password_form(); // WPCS: XSS ok.
-	return;
+    echo get_the_password_form(); // WPCS: XSS ok.
+    return;
 }
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 
-	<?php
-	/**
-	 * Hook: woocommerce_before_single_product_summary.
-	 *
-	 * @hooked woocommerce_show_product_sale_flash - 10
-	 * @hooked woocommerce_show_product_images - 20
-	 */
-	do_action( 'woocommerce_before_single_product_summary' );
-	?>
+    <?php
+    /**
+     * Hook: woocommerce_before_single_product_summary.
+     *
+     * @hooked woocommerce_show_product_sale_flash - 10
+     * @hooked woocommerce_show_product_images - 20
+     */
+    do_action( 'woocommerce_before_single_product_summary' );
+    ?>
 
-	<div class="summary entry-summary">
-		<?php
-		/**
-		 * Hook: woocommerce_single_product_summary.
-		 *
-		 * @hooked woocommerce_template_single_title - 5
-		 * @hooked woocommerce_template_single_rating - 10
-		 * @hooked woocommerce_template_single_price - 10
-		 * @hooked woocommerce_template_single_excerpt - 20
-		 * @hooked woocommerce_template_single_add_to_cart - 30
-		 * @hooked woocommerce_template_single_meta - 40
-		 * @hooked woocommerce_template_single_sharing - 50
-		 * @hooked WC_Structured_Data::generate_product_data() - 60
-		 */
-		do_action( 'woocommerce_single_product_summary' );
-		?>
-	</div>
+    <div class="summary entry-summary">
+		
+        <?php
+        /**
+         * Hook: woocommerce_single_product_summary.
+         *
+         * @hooked woocommerce_template_single_title - 5
+         * @hooked woocommerce_template_single_price - 10
+         * @hooked woocommerce_template_single_excerpt - 20
+         * @hooked woocommerce_template_single_add_to_cart - 30
+         */
+        do_action( 'woocommerce_single_product_summary' );
+        ?>
+    </div>
 
-	<?php
-	/**
-	 * Hook: woocommerce_after_single_product_summary.
-	 *
-	 * @hooked woocommerce_output_product_data_tabs - 10
-	 * @hooked woocommerce_upsell_display - 15
-	 * @hooked woocommerce_output_related_products - 20
-	 */
-	do_action( 'woocommerce_after_single_product_summary' );
+    <?php
+    /**
+     * Hook: woocommerce_after_single_product_summary.
+     *
+     * @hooked woocommerce_output_product_data_tabs - 10
+     * @hooked woocommerce_upsell_display - 15
+     * @hooked woocommerce_output_related_products - 20
+     */
+    do_action( 'woocommerce_after_single_product_summary' );
+    
 	?>
 </div>
 
-<!-- <?php do_action( 'woocommerce_after_single_product' ); ?> -->
+<?php do_action( 'woocommerce_after_single_product' ); ?>
 
-
+<!-- Include JavaScript to handle price update based on size variation -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+jQuery(document).ready(function($) {
+    // Listen for changes in the size variation dropdown
+    $('select[name="attribute_size"]').change(function() {
+        var size = $(this).val();
+        
+        // Perform price calculation based on the selected size
+        var price = calculatePrice(size);
+        
+        // Update the displayed price
+        $('.woocommerce-variation-price .price').html(price);
+    });
+    
+    // Function to calculate the price based on the selected size
+    function calculatePrice(size) {
+        // Perform price calculation logic based on the selected size
+        // Replace this with your actual price calculation logic
+        var price = 0;
+        if (size === '140') {
+            price = 300; // Set price for size 140
+        } else if (size === '160') {
+            price = 350; // Set price for size 160
+        } // Add more conditions as needed for other sizes
+        
+        // Format the price as needed
+        return price + ' kr';
+    }
+});
+</script>

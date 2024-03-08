@@ -47,13 +47,29 @@
     .entry-summary{
        
         float: right;
-        margin-top: 21px;
-        margin-right: 170px;
-
-        .woocommerce-variation-form{
+        margin-right: 227px;
+        margin-top: -744px;
+       .variations_form{
+        .variations{
+            .label{
+             label{
+                display: none;
+             }
+            }
+        }
+           .single_variation_wrap{
+                
+                .woocommerce-variation-add-to-cart{
+                .quantity{
+                    display: none;
+                }
+            }
+        
+        }
+    }
+        .product_meta{
             display: none;
         }
-        
         h1.product_title {
             font-family: Roboto;
             font-size: 28px;
@@ -66,6 +82,7 @@
         }
         
         p.price{
+            display: none;
             color:#323334;
             font-family: Roboto;
             font-size: 24px;
